@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Contacts
 
 extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
@@ -21,7 +22,7 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CustomCollectionCell
  
         //Try to get item from delegate
-        let item = self.selectedItems[indexPath.row]
+        var item = self.selectedItems[indexPath.row]
         
         //Add target for the button
         cell.removeButton.addTarget(self, action: #selector(MultiSelecetionViewController.handleTap(sender:)), for: .touchUpInside)
@@ -29,12 +30,43 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
         
         cell.labelTitle.text    = item.title
         
-        if item.image == nil && item.imageURL == nil{
-            cell.initials.text      = item.getInitials()
-            cell.initials.isHidden  = false
+        cell.initials.isHidden      = true
+        cell.imageAvatar.isHidden   = true
+        
+        if let contact = item.userInfo as? CNContact{
+            
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                
+                if(contact.imageDataAvailable && contact.imageData!.count > 0){
+                    let img = UIImage(data: contact.imageData!)
+                    DispatchQueue.main.async {
+                        item.image = img
+                        cell.imageAvatar.image      = img
+                        cell.initials.isHidden      = true
+                        cell.imageAvatar.isHidden   = false
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        cell.initials.text          = item.getInitials()
+                        cell.initials.isHidden      = false
+                        cell.imageAvatar.isHidden   = true
+                    }
+                }
+                
+            }
+            
         }else{
-            cell.initials.isHidden  = true
+            if item.image == nil && item.imageURL == nil{
+                cell.initials.text          = item.getInitials()
+                cell.initials.isHidden      = false
+                cell.imageAvatar.isHidden   = true
+            }else{
+                cell.imageAvatar.image      = item.image
+                cell.initials.isHidden      = true
+                cell.imageAvatar.isHidden   = false
+            }
         }
+        
         if item.color != nil{
             cell.initials.backgroundColor = item.color!
         }
@@ -56,6 +88,9 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
     
     @objc func handleTap(sender:UIButton){
         
+        //Comunicate deselection to delegate
+        let item = selectedItems[sender.tag]
+        SwiftMultiSelect.delegate?.swiftMultiSelect(didUnselectItem: item)
         selectedItems.remove(at: sender.tag)
         self.selectionScrollView.reloadData()
         self.tableView.reloadData()
@@ -95,9 +130,7 @@ class CustomCollectionCell: UICollectionViewCell
         label.isOpaque                  = false
         label.backgroundColor           = UIColor.clear
         label.textAlignment             = NSTextAlignment.center
-        label.lineBreakMode             = .byWordWrapping
-        label.minimumScaleFactor        = 0.6
-        label.adjustsFontSizeToFitWidth = true
+        label.adjustsFontSizeToFitWidth = false
         label.numberOfLines             = 1
         label.textColor                 = UIColor.black
         label.font                      = UIFont.systemFont(ofSize: 11.0)
@@ -110,7 +143,7 @@ class CustomCollectionCell: UICollectionViewCell
     open fileprivate(set) lazy var imageAvatar: UIImageView = {
         
         let image = UIImageView()
-        image.contentMode           = .scaleAspectFit
+        image.contentMode           = .scaleAspectFill
         image.image                 = #imageLiteral(resourceName: "user_blank")
         image.layer.cornerRadius    = CGFloat(Config.selectionHeight-((Config.avatarScale*2.0)*Config.avatarMargin))/2.0
         image.layer.masksToBounds   = true
@@ -123,14 +156,14 @@ class CustomCollectionCell: UICollectionViewCell
         
         let label = UILabel()
         label.isOpaque                  = false
-        label.backgroundColor           = UIColor.red
+        label.backgroundColor           = UIColor.gray
         label.textAlignment             = NSTextAlignment.center
         label.lineBreakMode             = .byWordWrapping
         label.minimumScaleFactor        = 0.6
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines             = 1
         label.textColor                 = UIColor.white
-        label.font                      = UIFont.systemFont(ofSize: 13.0)
+        label.font                      = UIFont.systemFont(ofSize: 18.0)
         label.layer.cornerRadius        = CGFloat(Config.selectionHeight-((Config.avatarScale*2.0)*Config.avatarMargin))/2.0
         label.layer.masksToBounds       = true
         return label

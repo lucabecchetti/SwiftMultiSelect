@@ -10,6 +10,7 @@
 		B1491F331F28877000D5E44B /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */; };
 		B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */; };
 		B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */; };
+		B1491F391F28E7D600D5E44B /* ContactsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */; };
 		B15C34F91F25DE840001CC0A /* SwiftMultiSelect.h in Headers */ = {isa = PBXBuildFile; fileRef = B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B15C351C1F25DEAB0001CC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C351B1F25DEAB0001CC0A /* AppDelegate.swift */; };
 		B15C351E1F25DEAB0001CC0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C351D1F25DEAB0001CC0A /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionViewController.swift; sourceTree = "<group>"; };
 		B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionTableView.swift; sourceTree = "<group>"; };
 		B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionCollectionView.swift; sourceTree = "<group>"; };
+		B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsLibrary.swift; sourceTree = "<group>"; };
 		B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMultiSelect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMultiSelect.h; sourceTree = "<group>"; };
 		B15C34F81F25DE840001CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */,
 				B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */,
 				B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */,
+				B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */,
 			);
 			path = SwiftMultiSelect;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1491F391F28E7D600D5E44B /* ContactsLibrary.swift in Sources */,
 				B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */,
 				B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */,
 				B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */,

@@ -8,11 +8,45 @@
 
 import Foundation
 
+/// Define the type of datasource
+public enum SwiftMultiSelectSourceType : Int{
+    
+    case phone  =   0
+    case custom =   1
+    
+}
+
 /// Main static class
 public class SwiftMultiSelect{
 
+    public static var items             :   [SwiftMultiSelectItem]?
+    
+    public static var dataSourceType    :   SwiftMultiSelectSourceType? = .phone{
+        didSet{
+            
+            if self.dataSourceType == .phone{
+                self.getContacts()
+            }else{
+                self.items = nil
+            }
+            
+        }
+    }
+    
     /// Delegate reference
-    public static var delegate          :   SwiftMultiSelectDelegate?
+    public static var delegate          :   SwiftMultiSelectDelegate?{
+        
+        didSet{
+            if self.dataSourceType == .phone{
+                self.getContacts()
+            }else{
+                self.items = nil
+            }
+        }
+        
+    }
+    
+    public static var dataSource        :   SwiftMultiSelectDataSource?
     
     /// Array of initial items selected
     public static var initialSelected   :   [SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
@@ -37,13 +71,26 @@ public class SwiftMultiSelect{
         
     }
     
+    private class func getContacts(){
+        //ATTENTION: You have to provide a info.plist string for access contacts
+        //<key>NSContactsUsageDescription</key>
+        //<string>This app needs access to contacts</string>
+        //
+        //Retrieve contacts from phone
+        ContactsLibrary.getContacts { (success, data) in
+            
+            self.items = data!
+            
+        }
+    }
+    
 }
 
 // Public struct for configuration
 public struct Config {
     
-    public static var tableRowHeight    :   Double     = 55.0
-    public static var selectionHeight   :   Double     = 80.0
+    public static var tableRowHeight    :   Double     = 70.0
+    public static var selectionHeight   :   Double     = 90.0
     public static var avatarMargin      :   Double     = 7.0
     public static var avatarScale       :   Double     = 1.7
     
@@ -53,6 +100,7 @@ public struct Config {
     public static var removeButtonImage :   UIImage    = #imageLiteral(resourceName: "remove")
     
     public static var viewTitle         :   String     = "Swift Multiple Select"
+    public static var doneString        :   String     = "Done"
     
     public static var colorArray        :   [UIColor]  = [
         ThemeColors.amethystColor,
@@ -89,6 +137,18 @@ public struct SwiftMultiSelectItem{
     public var userInfo     :   Any?
     public var color        :   UIColor?
     public var row          :   Int?
+    
+    
+    /// String representation for struct
+    public var string  :   String{
+        var describe = "\n+--------------------+"
+        describe += "\n| title: \(title)"
+        describe += "\n| description: \(String(describing: self.description))"
+        describe += "\n| userInfo: \(String(describing: userInfo))"
+        describe += "\n| title: \(title)"
+        describe += "\n+--------------------+"
+        return describe
+    }
     
     /// Constructor for item struct
     ///
@@ -158,3 +218,35 @@ public struct SwiftMultiSelectItem{
     }
     
 }
+
+
+/// A data source
+public protocol SwiftMultiSelectDataSource{
+    
+    /// Ask delegate for current item in row
+    func swiftMultiSelect(itemAtRow row:Int) -> SwiftMultiSelectItem
+    
+    /// Asks for the number of items
+    func numberOfItemsInSwiftMultiSelect() -> Int
+    
+}
+
+/// A delegate to handle
+public protocol SwiftMultiSelectDelegate{
+    
+    /// Tell to delegate that user did end selection
+    func swiftMultiSelect(didSelectItems items:[SwiftMultiSelectItem])
+    
+    /// Tell to delegate that item has been selected
+    func swiftMultiSelect(didSelectItem item:SwiftMultiSelectItem)
+    
+    /// Tell to delegate that item has been unselected
+    func swiftMultiSelect(didUnselectItem item:SwiftMultiSelectItem)
+    
+    /// Tell to delegate user has closed without select
+    func didCloseSwiftMultiSelect()
+    
+    
+}
+
+

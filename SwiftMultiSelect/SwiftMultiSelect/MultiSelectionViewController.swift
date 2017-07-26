@@ -26,7 +26,13 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
     }
     
     /// Array of selected items
-    open var selectedItems : [SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
+    open var selectedItems : [SwiftMultiSelectItem] = [SwiftMultiSelectItem](){
+        didSet{
+            //Reset button navigation bar
+            rightButtonBar.title = "\(Config.doneString) (\(self.selectedItems.count))"
+            self.navigationItem.rightBarButtonItem?.isEnabled = (self.selectedItems.count > 0)
+        }
+    }
     
     /// Lazy view that represent a selection scrollview
     open fileprivate(set) lazy var selectionScrollView: UICollectionView = {
@@ -39,9 +45,9 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         layout.minimumLineSpacing       = 0
         
         //Build collectin view
-        let selected                = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        selected.backgroundColor    = .white
-        selected.isHidden           = (SwiftMultiSelect.initialSelected.count <= 0)
+        let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        selected.backgroundColor        = .white
+        selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
         return selected
         
     }()
@@ -89,8 +95,8 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         }
     }
     
-    var lefButtonBar : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(MultiSelecetionViewController.dismissSelector))
-    
+    var leftButtonBar   : UIBarButtonItem?
+    var rightButtonBar  : UIBarButtonItem = UIBarButtonItem()
     
     /// Function to build a views and set constraint
     func createViewsAndSetConstraints(){
@@ -162,16 +168,27 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
     
     /// Toggle de selection view
     ///
-    /// - Parameter sender:
+    /// - Parameter show: true show scroller, false hide the scroller
     func toggleSelectionScrollView(show:Bool) {
         UIView.animate(withDuration: 0.2) {
             self.selectionScrollView.isHidden = !show
         }
     }
     
-    @objc func dismissSelector(){
+    
+    /// Selector for right button
+    @objc public func selectionDidEnd(){
+        
+        SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItems: self.selectedItems)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    /// Selector for left button
+    @objc public func dismissSelector(){
         
         self.dismiss(animated: true, completion: nil)
+        SwiftMultiSelect.delegate?.didCloseSwiftMultiSelect()
         
     }
     
@@ -182,7 +199,14 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         
         self.title = Config.viewTitle
         
-        self.navigationItem.leftBarButtonItem = lefButtonBar
+        rightButtonBar.isEnabled                = false
+        leftButtonBar                           = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(MultiSelecetionViewController.dismissSelector))
+        leftButtonBar!.isEnabled                = true
+        self.navigationItem.leftBarButtonItem   = leftButtonBar
+        self.navigationItem.rightBarButtonItem  = rightButtonBar
+        
+        rightButtonBar.action = #selector(MultiSelecetionViewController.selectionDidEnd)
+        rightButtonBar.target = self
         
         self.view.backgroundColor = .white
         
@@ -192,6 +216,8 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         
         if(SwiftMultiSelect.initialSelected.count>0){
             self.selectionScrollView.reloadData()
+            rightButtonBar.isEnabled    = true
+            rightButtonBar.title        = "\(Config.doneString) (\(SwiftMultiSelect.initialSelected.count))"
         }
         
     }

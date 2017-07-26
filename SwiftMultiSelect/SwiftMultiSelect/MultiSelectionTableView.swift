@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Contacts
 
 // MARK: - UITableViewDelegate,UITableViewDataSource
 extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSource{
@@ -17,12 +18,17 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //Try to get rows from delegate
-        guard let rows = SwiftMultiSelect.delegate?.numberOfItemsInSwiftMultiSelect() else {
-            return 0
-        }
+        if SwiftMultiSelect.dataSourceType == .phone{
+            return SwiftMultiSelect.items!.count
+        }else{
+            
+            //Try to get rows from delegate
+            guard let rows = SwiftMultiSelect.dataSource?.numberOfItemsInSwiftMultiSelect() else {
+                return 0
+            }
         
-        return rows
+            return rows
+        }
     
     }
     
@@ -32,21 +38,55 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         let cell : CustomTableCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableCell
         cell.selectionStyle = .none
 
-        //Try to get item from delegate
-        guard let item = SwiftMultiSelect.delegate?.swiftMultiSelect(itemAtRow: indexPath.row) else {
-            return cell
+        var item:SwiftMultiSelectItem!
+        
+        if SwiftMultiSelect.dataSourceType == .phone{
+            item = SwiftMultiSelect.items![indexPath.row]
+        }else{
+            //Try to get item from delegate
+            item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
         }
 
         //Configure cell properties
-        cell.labelTitle.text    = item.title
-        cell.labelSubTitle.text = item.description
+        cell.labelTitle.text        = item.title
+        cell.labelSubTitle.text     = item.description
+        cell.initials.isHidden      = true
+        cell.imageAvatar.isHidden   = true
         
-        if item.image == nil && item.imageURL == nil{
-            cell.initials.text      = item.getInitials()
-            cell.initials.isHidden  = false
+        if let contact = item.userInfo as? CNContact{
+
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                
+                if(contact.imageDataAvailable && contact.imageData!.count > 0){
+                    let img = UIImage(data: contact.imageData!)
+                    DispatchQueue.main.async {
+                        item.image = img
+                        cell.imageAvatar.image      = img
+                        cell.initials.isHidden      = true
+                        cell.imageAvatar.isHidden   = false
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        cell.initials.text          = item.getInitials()
+                        cell.initials.isHidden      = false
+                        cell.imageAvatar.isHidden   = true
+                    }
+                }
+                
+            }
+  
         }else{
-            cell.initials.isHidden  = true
+            if item.image == nil && item.imageURL == nil{
+                cell.initials.text          = item.getInitials()
+                cell.initials.isHidden      = false
+                cell.imageAvatar.isHidden   = true
+            }else{
+                cell.imageAvatar.image      = item.image
+                cell.initials.isHidden      = true
+                cell.imageAvatar.isHidden   = false
+            }
         }
+        
         if item.color != nil{
             cell.initials.backgroundColor = item.color!
         }else{
@@ -82,10 +122,14 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         
         //Get selected cell
         let cell = tableView.cellForRow(at: indexPath) as! CustomTableCell
-        
-        //Try to get item from delegate
-        guard var item = SwiftMultiSelect.delegate?.swiftMultiSelect(itemAtRow: indexPath.row) else {
-            return
+
+        var item:SwiftMultiSelectItem!
+
+        if SwiftMultiSelect.dataSourceType == .phone{
+            item = SwiftMultiSelect.items![indexPath.row]
+        }else{
+            //Try to get item from delegate
+            item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
         }
         
         //Save item data 
@@ -99,11 +143,18 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
             selectedItems = selectedItems.filter(){
                 return item != $0
             }
+            
+            //Comunicate deselection to delegate
+            SwiftMultiSelect.delegate?.swiftMultiSelect(didUnselectItem: item)
+            
         }
         else{
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
             //Add current item to selected
             selectedItems.append(item)
+            //Comunicate selection to delegate
+            SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItem: item)
+            
         }
         
         //Toggle scrollview
@@ -111,10 +162,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         
         //Reload collectionview
         self.reloadAndPositionScroll()
-        
-        //Comunicate selection to delegate
-        SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItemAt: indexPath.row)
-        
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -124,22 +172,6 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     }
     
 }
-
-
-/// A delegate to handle
-public protocol SwiftMultiSelectDelegate{
-    
-    /// Asks for the number of items
-    func numberOfItemsInSwiftMultiSelect() -> Int
-    
-    /// Ask delegate for current item in row
-    func swiftMultiSelect(itemAtRow row:Int) -> SwiftMultiSelectItem
-    
-    /// Tell to delegate that item has been selected
-    func swiftMultiSelect(didSelectItemAt row:Int)
-    
-}
-
 
 /// Class to represent custom cell for tableview
 class CustomTableCell: UITableViewCell
@@ -176,7 +208,7 @@ class CustomTableCell: UITableViewCell
         label.minimumScaleFactor        = 0.6
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines             = 1
-        label.textColor                 = UIColor.black
+        label.textColor                 = UIColor.gray
         label.font                      = UIFont.systemFont(ofSize: 13.0)
         
         return label
@@ -187,7 +219,7 @@ class CustomTableCell: UITableViewCell
     open fileprivate(set) lazy var imageAvatar: UIImageView = {
         
         let image = UIImageView()
-        image.contentMode           = .scaleAspectFit
+        image.contentMode           = .scaleAspectFill
         image.image                 = #imageLiteral(resourceName: "user_blank")
         image.layer.cornerRadius    = CGFloat( (Config.tableRowHeight-(Config.avatarMargin*2))/2)
         image.layer.masksToBounds   = true
@@ -207,7 +239,7 @@ class CustomTableCell: UITableViewCell
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines             = 1
         label.textColor                 = UIColor.white
-        label.font                      = UIFont.systemFont(ofSize: 13.0)
+        label.font                      = UIFont.systemFont(ofSize: 18.0)
         label.layer.cornerRadius    = CGFloat( (Config.tableRowHeight-(Config.avatarMargin*2))/2)
         label.layer.masksToBounds   = true
         return label
