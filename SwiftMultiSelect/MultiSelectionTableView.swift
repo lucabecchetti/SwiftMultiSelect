@@ -195,10 +195,12 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         }
 
         //Reset search
-        searchBar.text = ""
-        searchString = ""
-        SwiftMultiSelect.delegate?.userDidSearch(searchString: "")
-        self.tableView.reloadData()
+        if searchString != ""{
+            searchBar.text = ""
+            searchString = ""
+            SwiftMultiSelect.delegate?.userDidSearch(searchString: "")
+            self.tableView.reloadData()
+        }
 
     }
     

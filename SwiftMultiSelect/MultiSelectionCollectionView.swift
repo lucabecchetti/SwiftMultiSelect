@@ -135,13 +135,7 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
 
         //Remove
         if remove {
-            
-            if selectedItems.count <= 0{
-                //Toggle scrollview
-                toggleSelectionScrollView(show: false)
-            }
-            
-            
+
             //For remove from collection view and create IndexPath, i need the index posistion in the array
             let id = selectedItems.index { (itm) -> Bool in
                 itm.row == idp
@@ -161,6 +155,14 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
             
             //Reload cell state
             reloadCellState(row: idp, selected: false)
+            
+            
+            if selectedItems.count <= 0{
+                //Toggle scrollview
+                toggleSelectionScrollView(show: false)
+            }
+            
+            
             
         //Add
         }else{
