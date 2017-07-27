@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B13923E01F2A170500269574 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923DF1F2A170500269574 /* CustomCollectionCell.swift */; };
+		B13923E21F2A171800269574 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923E11F2A171800269574 /* CustomTableCell.swift */; };
 		B1491F331F28877000D5E44B /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */; };
 		B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */; };
 		B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B13923DF1F2A170500269574 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		B13923E11F2A171800269574 /* CustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionViewController.swift; sourceTree = "<group>"; };
 		B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionTableView.swift; sourceTree = "<group>"; };
 		B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionCollectionView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */,
 				B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */,
 				B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */,
+				B13923DF1F2A170500269574 /* CustomCollectionCell.swift */,
+				B13923E11F2A171800269574 /* CustomTableCell.swift */,
 			);
 			path = SwiftMultiSelect;
 			sourceTree = "<group>";
@@ -248,9 +254,11 @@
 			files = (
 				B1491F391F28E7D600D5E44B /* ContactsLibrary.swift in Sources */,
 				B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */,
+				B13923E01F2A170500269574 /* CustomCollectionCell.swift in Sources */,
 				B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */,
 				B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */,
 				B1491F331F28877000D5E44B /* MultiSelectionViewController.swift in Sources */,
+				B13923E21F2A171800269574 /* CustomTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.brokenice.SwiftMultiSelectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,6 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.brokenice.SwiftMultiSelectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

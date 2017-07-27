@@ -46,7 +46,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         
         //Build collectin view
         let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        selected.backgroundColor        = .white
+        selected.backgroundColor        = Config.selectorStyle.backgroundColor
         selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
         return selected
         
@@ -58,7 +58,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //Build layout
         let sep                 = UIView()
         sep.autoresizingMask    = [.flexibleWidth]
-        sep.backgroundColor     = Config.separatorColor
+        sep.backgroundColor     = Config.selectorStyle.separatorColor
         return sep
         
     }()
@@ -67,6 +67,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
     open fileprivate(set) lazy var tableView: UITableView = {
         
         let tableView:UITableView = UITableView()
+        tableView.backgroundColor = Config.tableStyle.backgroundColor
         return tableView
         
     }()
@@ -105,7 +106,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         view.addSubview(stackView)
         
         selectionScrollView.addSubview(separator)
-        separator.frame = CGRect(x: 0.0, y: Config.selectionHeight-Config.separatorHeight, width: Double(self.view.frame.size.width), height: Config.separatorHeight)
+        separator.frame = CGRect(x: 0.0, y: Config.selectorStyle.selectionHeight-Config.selectorStyle.separatorHeight, width: Double(self.view.frame.size.width), height: Config.selectorStyle.separatorHeight)
         separator.layer.zPosition = CGFloat(separator.subviews.count+1)
         
         //Register tableview delegate
@@ -145,7 +146,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         )
         //constraint for scrollview
         let selected_V  = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[selected(\(Config.selectionHeight))]",
+            withVisualFormat: "V:|-0-[selected(\(Config.selectorStyle.selectionHeight))]",
             options: NSLayoutFormatOptions(rawValue:0),
             metrics: nil,
             views: viewsDictionary
@@ -208,7 +209,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         rightButtonBar.action = #selector(MultiSelecetionViewController.selectionDidEnd)
         rightButtonBar.target = self
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = Config.mainBackground
         
         createViewsAndSetConstraints()
         

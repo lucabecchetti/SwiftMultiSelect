@@ -86,22 +86,19 @@ public class SwiftMultiSelect{
     
 }
 
-// Public struct for configuration
+/// Public struct for configuration and customizations
 public struct Config {
+
+    /// Background of main view
+    public static var mainBackground        :   UIColor    = UIColor.white
+    /// View's title
+    public static var viewTitle             :   String     = "Swift Multiple Select"
+    /// Title for done button
+    public static var doneString            :   String     = "Done"
+    //Placeholder image during lazy load
+    public static var placeholder_image     :   UIImage = #imageLiteral(resourceName: "user_blank")
     
-    public static var tableRowHeight    :   Double     = 70.0
-    public static var selectionHeight   :   Double     = 90.0
-    public static var avatarMargin      :   Double     = 7.0
-    public static var avatarScale       :   Double     = 1.7
-    
-    public static var separatorColor    :   UIColor    = UIColor.lightGray
-    public static var separatorHeight   :   Double     = 0.7
-    
-    public static var removeButtonImage :   UIImage    = #imageLiteral(resourceName: "remove")
-    
-    public static var viewTitle         :   String     = "Swift Multiple Select"
-    public static var doneString        :   String     = "Done"
-    
+    /// Array of colors to use in initials
     public static var colorArray        :   [UIColor]  = [
         ThemeColors.amethystColor,
         ThemeColors.asbestosColor,
@@ -111,6 +108,56 @@ public struct Config {
         ThemeColors.pumpkinColor,
         ThemeColors.sunflowerColor
     ]
+    
+    /// Define the style of tableview
+    public struct tableStyle{
+        
+        //Background color of tableview
+        public static var backgroundColor       :   UIColor = UIColor.white
+        //Height of single row
+        public static var tableRowHeight        :   Double  = 70.0
+        //Margin between imageavatar and cell borders
+        public static var avatarMargin          :   Double  = 7.0
+        //Color for title label, first line
+        public static var title_color           :   UIColor = UIColor.black
+        //Font for title label
+        public static var title_font            :   UIFont  = UIFont.boldSystemFont(ofSize: 16.0)
+        //Color for description label, first line
+        public static var description_color     :   UIColor = UIColor.gray
+        //Font for description label
+        public static var description_font      :   UIFont  = UIFont.systemFont(ofSize: 13.0)
+        //Color for initials label
+        public static var initials_color        :   UIColor = UIColor.white
+        //Font for initials label
+        public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
+
+    }
+    
+    /// Define the style of scrollview
+    public struct selectorStyle{
+        
+        //Image asset for remove button
+        public static var removeButtonImage     :   UIImage = #imageLiteral(resourceName: "remove")
+        //The height of selectorview, all subviews will be resized
+        public static var selectionHeight       :   Double  = 90.0
+        //Scale factor for size of imageavatar based on cell size
+        public static var avatarScale           :   Double  = 1.7
+        //Color for separator line between scrollview and tableview
+        public static var separatorColor        :   UIColor = UIColor.lightGray
+        //Height for separator line between scrollview and tableview
+        public static var separatorHeight       :   Double  = 0.7
+        //Background color of uiscrollview
+        public static var backgroundColor       :   UIColor = UIColor.white
+        //Color for title label
+        public static var title_color           :   UIColor = UIColor.black
+         //Font for title label
+        public static var title_font            :   UIFont  = UIFont.systemFont(ofSize: 11.0)
+        //Color for initials label
+        public static var initials_color        :   UIColor = UIColor.white
+        //Font for initials label
+        public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
+        
+    }
 
 }
 
@@ -138,6 +185,8 @@ public struct SwiftMultiSelectItem{
     public var color        :   UIColor?
     public var row          :   Int?
     
+    ///Unique identifier
+    fileprivate(set) var id :   Int?
     
     /// String representation for struct
     public var string  :   String{
@@ -247,6 +296,39 @@ public protocol SwiftMultiSelectDelegate{
     func didCloseSwiftMultiSelect()
     
     
+}
+
+// MARK: - UIImageView
+extension UIImageView{
+    
+    
+    /// Set an image in UIImageView from remote URL
+    ///
+    /// - Parameter url: url of the image
+    func setImageFromURL(stringImageUrl url: String){
+        
+        //Placeholder image
+        image = Config.placeholder_image
+        
+        //Download async image
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+            if let url = URL(string: url) {
+                do{
+                    
+                    let data = try Data.init(contentsOf: url)
+                    
+                    //Set image in the main thread
+                    DispatchQueue.main.async {
+                        self.image = UIImage(data: data)
+                    }
+                    
+                }catch{
+                    
+                }
+            }
+        }
+        
+    }
 }
 
 

@@ -10,13 +10,17 @@ import Foundation
 import Contacts
 import ContactsUI
 
+
+/// Class to manage Contacts
 public class ContactsLibrary{
     
-    //Puntatore alla rubrica
-    public static var contactStore = CNContactStore()
-  
-    public var notifiedSend: Bool = false
-
+    //Contacts store
+    public static var contactStore  = CNContactStore()
+    
+    
+    /// Function to request access for PhoneBook
+    ///
+    /// - Parameter completionHandler: <#completionHandler description#>
     class func requestForAccess(_ completionHandler: @escaping (_ accessGranted: Bool) -> Void) {
         
         let authorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
@@ -44,6 +48,12 @@ public class ContactsLibrary{
         }
     }
     
+    
+    /// Function to get contacts from device
+    ///
+    /// - Parameters:
+    ///   - keys: array of keys to get
+    ///   - completionHandler: callback function, contains contacts array as parameter
     public class func getContacts(_ keys:[CNKeyDescriptor] = [CNContactGivenNameKey as CNKeyDescriptor, CNContactFamilyNameKey as CNKeyDescriptor, CNContactEmailAddressesKey as CNKeyDescriptor, CNContactOrganizationNameKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactViewController.descriptorForRequiredKeys()],completionHandler: @escaping (_ success:Bool, _ contacts: [SwiftMultiSelectItem]?) -> Void){
         
         self.requestForAccess { (accessGranted) -> Void in
@@ -56,7 +66,6 @@ public class ContactsLibrary{
                 do {
                     var row = 0
                     try self.contactStore.enumerateContacts(with: contactFetchRequest, usingBlock: { (contact, stop) -> Void in
-                        //Ordering contacts based on alphabets in firstname
                         
                         var username    = "\(contact.givenName) \(contact.familyName)"
                         var companyName = contact.organizationName
@@ -74,18 +83,25 @@ public class ContactsLibrary{
                     })
                     completionHandler(true, contactsArray)
                 }
+                    
                     //Catching exception as enumerateContactsWithFetchRequest can throw errors
                 catch let error as NSError {
                     
                     print(error.localizedDescription)
+                    
                 }
                 
             }else{
                 completionHandler(false, nil)
             }
         }
+        
     }
     
+    
+    /// Get allowed keys
+    ///
+    /// - Returns: array
     class func allowedContactKeys() -> [CNKeyDescriptor]{
         
         return [
@@ -119,28 +135,6 @@ public class ContactsLibrary{
         ]
         
     }
-    
-    class func getByIdentifier(_ identifier:String,keys:[CNKeyDescriptor] = [CNContactGivenNameKey as CNKeyDescriptor, CNContactFamilyNameKey as CNKeyDescriptor, CNContactEmailAddressesKey as CNKeyDescriptor, CNContactOrganizationNameKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactViewController.descriptorForRequiredKeys()]) -> CNContact?{
-        
-        do {
-            let refetchedContact = try self.contactStore.unifiedContact(withIdentifier: identifier, keysToFetch: keys)
-            return refetchedContact
-        } catch {
-            return nil
-        }
-        
-    }
-    
-    class func getImageByIdentifier(_ identifier:String) -> Data?{
-        
-        let cont:CNContact? = self.getByIdentifier(identifier, keys: [CNContactImageDataAvailableKey as CNKeyDescriptor, CNContactImageDataKey as CNKeyDescriptor])
-        if(cont != nil && cont!.imageDataAvailable && cont!.imageData!.count > 0){
-            return cont!.imageData
-        }
-        
-        return nil
-        
-    }
-    
+
 }
 
