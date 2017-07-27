@@ -19,7 +19,11 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if SwiftMultiSelect.dataSourceType == .phone{
-            return SwiftMultiSelect.items!.count
+            if searchString == "" {
+                return SwiftMultiSelect.items!.count
+            }else{
+                return SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) }).count
+            }
         }else{
             
             //Try to get rows from delegate
@@ -41,7 +45,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         var item:SwiftMultiSelectItem!
         
         if SwiftMultiSelect.dataSourceType == .phone{
-            item = SwiftMultiSelect.items![indexPath.row]
+            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })[indexPath.row]
         }else{
             //Try to get item from delegate
             item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
@@ -151,7 +155,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         var item:SwiftMultiSelectItem!
 
         if SwiftMultiSelect.dataSourceType == .phone{
-            item = SwiftMultiSelect.items![indexPath.row]
+            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })[indexPath.row]
         }else{
             //Try to get item from delegate
             item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
@@ -190,6 +194,11 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
             
         }
 
+        //Reset search
+        searchBar.text = ""
+        searchString = ""
+        SwiftMultiSelect.delegate?.userDidSearch(searchString: "")
+        self.tableView.reloadData()
 
     }
     
@@ -197,6 +206,29 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     
         return CGFloat(Config.tableStyle.tableRowHeight)
         
+    }
+    
+    // MARK: - UISearchBarDelegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchString = searchText
+        
+        if(searchText.characters.count<=0){
+            self.perform(#selector(self.hideKeyboardWithSearchBar(_:)), with: searchBar, afterDelay: 0)
+            self.searchString = ""
+        }
+        
+        SwiftMultiSelect.delegate?.userDidSearch(searchString: searchText)
+        
+        self.tableView.reloadData()
+    }
+    
+    func hideKeyboardWithSearchBar(_ searchBar:UISearchBar){
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool{
+        return true
     }
     
 }

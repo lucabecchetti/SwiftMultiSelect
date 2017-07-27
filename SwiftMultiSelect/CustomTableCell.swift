@@ -66,7 +66,7 @@ class CustomTableCell: UITableViewCell
         
         let label = UILabel()
         label.isOpaque                  = false
-        label.backgroundColor           = UIColor.red
+        label.backgroundColor           = UIColor.gray
         label.textAlignment             = NSTextAlignment.center
         label.lineBreakMode             = .byWordWrapping
         label.minimumScaleFactor        = 0.6

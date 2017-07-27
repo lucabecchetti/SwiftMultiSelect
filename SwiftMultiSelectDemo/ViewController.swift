@@ -16,7 +16,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
     @IBOutlet weak var switchInitial: UISwitch!
     var items:[SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
     var initialValues:[SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
-    
+    var selectedItems:[SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
             items.append(SwiftMultiSelectItem(row: i, title: "test\(i)", description: "description for: \(i)"))
         }
         self.initialValues = [self.items.first!,self.items[1],self.items[2]]
-
+        self.selectedItems = items
     }
     
     
@@ -77,8 +77,16 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
     
     //MARK: - SwiftMultiSelectDelegate
     
+    func userDidSearch(searchString: String) {
+        if searchString == ""{
+            selectedItems = items
+        }else{
+            selectedItems = items.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })
+        }
+    }
+
     func numberOfItemsInSwiftMultiSelect() -> Int {
-        return items.count
+        return selectedItems.count
     }
 
     func swiftMultiSelect(didUnselectItem item: SwiftMultiSelectItem) {
@@ -95,7 +103,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
     }
 
     func swiftMultiSelect(itemAtRow row: Int) -> SwiftMultiSelectItem {
-        return items[row]
+        return selectedItems[row]
     }
     
     func swiftMultiSelect(didSelectItems items: [SwiftMultiSelectItem]) {

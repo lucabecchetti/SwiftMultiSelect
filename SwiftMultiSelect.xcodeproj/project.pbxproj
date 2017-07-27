@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B13923E01F2A170500269574 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923DF1F2A170500269574 /* CustomCollectionCell.swift */; };
 		B13923E21F2A171800269574 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923E11F2A171800269574 /* CustomTableCell.swift */; };
+		B14904E61F2A17CE0006864A /* SwiftMultiSelect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; };
+		B14904E71F2A17CE0006864A /* SwiftMultiSelect.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1491F331F28877000D5E44B /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */; };
 		B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */; };
 		B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */; };
@@ -20,12 +22,10 @@
 		B15C35231F25DEAB0001CC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15C35221F25DEAB0001CC0A /* Assets.xcassets */; };
 		B15C35261F25DEAB0001CC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15C35241F25DEAB0001CC0A /* LaunchScreen.storyboard */; };
 		B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */; };
-		B15C352F1F25DFC40001CC0A /* SwiftMultiSelect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; };
-		B15C35301F25DFC40001CC0A /* SwiftMultiSelect.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B15C35311F25DFC40001CC0A /* PBXContainerItemProxy */ = {
+		B14904E81F2A17CE0006864A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B15C34EB1F25DE840001CC0A /* Project object */;
 			proxyType = 1;
@@ -35,13 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B15C35331F25DFC40001CC0A /* Embed Frameworks */ = {
+		B14904EA1F2A17CE0006864A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B15C35301F25DFC40001CC0A /* SwiftMultiSelect.framework in Embed Frameworks */,
+				B14904E71F2A17CE0006864A /* SwiftMultiSelect.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15C352F1F25DFC40001CC0A /* SwiftMultiSelect.framework in Frameworks */,
+				B14904E61F2A17CE0006864A /* SwiftMultiSelect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,12 +173,12 @@
 				B15C35151F25DEAB0001CC0A /* Sources */,
 				B15C35161F25DEAB0001CC0A /* Frameworks */,
 				B15C35171F25DEAB0001CC0A /* Resources */,
-				B15C35331F25DFC40001CC0A /* Embed Frameworks */,
+				B14904EA1F2A17CE0006864A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B15C35321F25DFC40001CC0A /* PBXTargetDependency */,
+				B14904E91F2A17CE0006864A /* PBXTargetDependency */,
 			);
 			name = SwiftMultiSelectDemo;
 			productName = SwiftMultiSelectDemo;
@@ -274,10 +274,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B15C35321F25DFC40001CC0A /* PBXTargetDependency */ = {
+		B14904E91F2A17CE0006864A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B15C34F31F25DE840001CC0A /* SwiftMultiSelect */;
-			targetProxy = B15C35311F25DFC40001CC0A /* PBXContainerItemProxy */;
+			targetProxy = B14904E81F2A17CE0006864A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

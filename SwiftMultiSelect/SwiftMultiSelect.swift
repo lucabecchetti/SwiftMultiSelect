@@ -113,21 +113,21 @@ public struct Config {
     public struct tableStyle{
         
         //Background color of tableview
-        public static var backgroundColor       :   UIColor = UIColor.white
+        public static var backgroundColor       :   UIColor = .white
         //Height of single row
         public static var tableRowHeight        :   Double  = 70.0
         //Margin between imageavatar and cell borders
         public static var avatarMargin          :   Double  = 7.0
         //Color for title label, first line
-        public static var title_color           :   UIColor = UIColor.black
+        public static var title_color           :   UIColor = .black
         //Font for title label
         public static var title_font            :   UIFont  = UIFont.boldSystemFont(ofSize: 16.0)
         //Color for description label, first line
-        public static var description_color     :   UIColor = UIColor.gray
+        public static var description_color     :   UIColor = .gray
         //Font for description label
         public static var description_font      :   UIFont  = UIFont.systemFont(ofSize: 13.0)
         //Color for initials label
-        public static var initials_color        :   UIColor = UIColor.white
+        public static var initials_color        :   UIColor = .white
         //Font for initials label
         public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
 
@@ -147,15 +147,17 @@ public struct Config {
         //Height for separator line between scrollview and tableview
         public static var separatorHeight       :   Double  = 0.7
         //Background color of uiscrollview
-        public static var backgroundColor       :   UIColor = UIColor.white
+        public static var backgroundColor       :   UIColor = .white
         //Color for title label
-        public static var title_color           :   UIColor = UIColor.black
+        public static var title_color           :   UIColor = .black
          //Font for title label
         public static var title_font            :   UIFont  = UIFont.systemFont(ofSize: 11.0)
         //Color for initials label
-        public static var initials_color        :   UIColor = UIColor.white
+        public static var initials_color        :   UIColor = .white
         //Font for initials label
         public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
+        //Background color of collectionviewcell
+        public static var backgroundCellColor   :   UIColor = .clear
         
     }
 
@@ -294,6 +296,9 @@ public protocol SwiftMultiSelectDelegate{
     
     /// Tell to delegate user has closed without select
     func didCloseSwiftMultiSelect()
+    
+    /// Tell to delegate user has closed without select
+    func userDidSearch(searchString:String)
     
     
 }

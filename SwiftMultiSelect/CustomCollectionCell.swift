@@ -105,6 +105,8 @@ class CustomCollectionCell: UICollectionViewCell
             height  : 20
         )
         
+        backgroundColor = Config.selectorStyle.backgroundCellColor
+        
         
     }
     

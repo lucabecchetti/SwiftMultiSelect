@@ -9,7 +9,7 @@
 import Foundation
 
 /// Class that represent the selection view
-class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegate {
+class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegate,UISearchBarDelegate {
     
     /// Screen total with
     public var totalWidth:CGFloat{
@@ -47,7 +47,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //Build collectin view
         let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         selected.backgroundColor        = Config.selectorStyle.backgroundColor
-        selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
+        //selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
         return selected
         
     }()
@@ -72,10 +72,19 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         
     }()
     
+    /// Lazy var for table view
+    open fileprivate(set) lazy var searchBar: UISearchBar = {
+        
+        let searchBar:UISearchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        return searchBar
+        
+    }()
+    
     /// Lazy var for global stackview container
     open fileprivate(set) lazy var stackView: UIStackView = {
         
-        let stackView           = UIStackView(arrangedSubviews: [self.selectionScrollView,self.tableView])
+        let stackView           = UIStackView(arrangedSubviews: [self.searchBar,self.selectionScrollView,self.tableView])
         stackView.axis          = .vertical
         stackView.distribution  = .fill
         stackView.alignment     = .fill
@@ -96,8 +105,12 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         }
     }
     
+    //Nav bar buttons
     var leftButtonBar   : UIBarButtonItem?
     var rightButtonBar  : UIBarButtonItem = UIBarButtonItem()
+    
+    //Searched string
+    var searchString  = ""
     
     /// Function to build a views and set constraint
     func createViewsAndSetConstraints(){
@@ -120,6 +133,9 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         selectionScrollView.dataSource  =   self
         //Register cell class
         selectionScrollView.register(CustomCollectionCell.classForCoder(), forCellWithReuseIdentifier: "cell")
+        
+        //register search delegate
+        searchBar.delegate = self
         
         //Prevent adding top margin to collectionviewcell
         self.automaticallyAdjustsScrollViewInsets = false
@@ -144,26 +160,19 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
             metrics: nil,
             views: viewsDictionary
         )
-        //constraint for scrollview
-        let selected_V  = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[selected(\(Config.selectorStyle.selectionHeight))]",
-            options: NSLayoutFormatOptions(rawValue:0),
-            metrics: nil,
-            views: viewsDictionary
-        )
-        //constraint for scrollview
-        let selected_H  = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-0-[selected]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
-            metrics: nil,
-            views: viewsDictionary
-        )
         
+        searchBar.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 0).isActive        = true
+        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive                 = true
+        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive               = true
+        searchBar.heightAnchor.constraint(equalToConstant: CGFloat(40)).isActive = true
+
+        selectionScrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive                 = true
+        selectionScrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive               = true
+        selectionScrollView.heightAnchor.constraint(equalToConstant: CGFloat(Config.selectorStyle.selectionHeight)).isActive = true
+        selectionScrollView.isHidden = true
         //Add all constraints to view
         view.addConstraints(stackView_H)
         view.addConstraints(stackView_V)
-        view.addConstraints(selected_V)
-        view.addConstraints(selected_H)
     }
     
     
@@ -171,9 +180,10 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
     ///
     /// - Parameter show: true show scroller, false hide the scroller
     func toggleSelectionScrollView(show:Bool) {
-        UIView.animate(withDuration: 0.2) {
+        
+        UIView.animate(withDuration: 0.2, animations: {
             self.selectionScrollView.isHidden = !show
-        }
+        })
     }
     
     
