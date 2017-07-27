@@ -86,8 +86,11 @@ public class SwiftMultiSelect{
     
     public class func getImageFromBundle(name: String) -> UIImage {
         let podBundle = Bundle(for: SwiftMultiSelect.self)
-        if let img = UIImage(named: name, in: podBundle, compatibleWith: nil) {
-            return img
+        print(podBundle)
+        print(podBundle.url(forResource: "SwiftMultiSelect", withExtension: "bundle"))
+        if let url = podBundle.url(forResource: "SwiftMultiSelect", withExtension: "bundle") {
+            let bundle = Bundle(url: url)
+            return UIImage(named: name, in: bundle, compatibleWith: nil)!
         }
         return UIImage()
     }
