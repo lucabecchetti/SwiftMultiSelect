@@ -22,8 +22,7 @@
 		B15C35231F25DEAB0001CC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15C35221F25DEAB0001CC0A /* Assets.xcassets */; };
 		B15C35261F25DEAB0001CC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15C35241F25DEAB0001CC0A /* LaunchScreen.storyboard */; };
 		B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */; };
-		B187C64D1F2A46C3007B93F5 /* remove.imageset in Resources */ = {isa = PBXBuildFile; fileRef = B187C64B1F2A46C3007B93F5 /* remove.imageset */; };
-		B187C64E1F2A46C3007B93F5 /* user_blank.imageset in Resources */ = {isa = PBXBuildFile; fileRef = B187C64C1F2A46C3007B93F5 /* user_blank.imageset */; };
+		B187C6541F2A48FB007B93F5 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = B187C6531F2A48FB007B93F5 /* Resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +67,7 @@
 		B15C35251F25DEAB0001CC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B15C35271F25DEAB0001CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMultiSelect.swift; sourceTree = "<group>"; };
-		B187C64B1F2A46C3007B93F5 /* remove.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = remove.imageset; sourceTree = "<group>"; };
-		B187C64C1F2A46C3007B93F5 /* user_blank.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = user_blank.imageset; sourceTree = "<group>"; };
+		B187C6531F2A48FB007B93F5 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +110,7 @@
 		B15C34F61F25DE840001CC0A /* SwiftMultiSelect */ = {
 			isa = PBXGroup;
 			children = (
-				B187C64B1F2A46C3007B93F5 /* remove.imageset */,
-				B187C64C1F2A46C3007B93F5 /* user_blank.imageset */,
+				B187C6531F2A48FB007B93F5 /* Resources */,
 				B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */,
 				B15C34F81F25DE840001CC0A /* Info.plist */,
 				B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */,
@@ -238,8 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B187C64E1F2A46C3007B93F5 /* user_blank.imageset in Resources */,
-				B187C64D1F2A46C3007B93F5 /* remove.imageset in Resources */,
+				B187C6541F2A48FB007B93F5 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

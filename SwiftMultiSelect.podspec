@@ -8,7 +8,7 @@ s.summary = "SwiftMultiSelect lets a user select multiple contacts from PhoneBoo
 s.requires_arc = true
 
 # 2
-s.version = "0.1.1"
+s.version = "0.1.2"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -30,7 +30,7 @@ s.framework = "UIKit"
 s.source_files = "SwiftMultiSelect/*.{swift}"
 
 s.resource_bundles = {
-    'SwiftMultiSelect' => ['SwiftMultiSelect/**/*.png']
+    'SwiftMultiSelect' => ['SwiftMultiSelect/Resources/*.png']
 }
 
 end

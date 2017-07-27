@@ -86,8 +86,6 @@ public class SwiftMultiSelect{
     
     public class func getImageFromBundle(name: String) -> UIImage {
         let podBundle = Bundle(for: SwiftMultiSelect.self)
-        print(podBundle)
-        print(podBundle.url(forResource: "SwiftMultiSelect", withExtension: "bundle"))
         if let url = podBundle.url(forResource: "SwiftMultiSelect", withExtension: "bundle") {
             let bundle = Bundle(url: url)
             return UIImage(named: name, in: bundle, compatibleWith: nil)!
@@ -107,7 +105,7 @@ public struct Config {
     /// Title for done button
     public static var doneString            :   String     = "Done"
     //Placeholder image during lazy load
-    public static var placeholder_image     :   UIImage     = SwiftMultiSelect.getImageFromBundle(name: "user_blank")
+    public static var placeholder_image     :   UIImage     = SwiftMultiSelect.getImageFromBundle(name: "user_blank_1")
     /// Array of colors to use in initials
     public static var colorArray        :   [UIColor]  = [
         ThemeColors.amethystColor,
