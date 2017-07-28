@@ -241,7 +241,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
 }
 ```
 
-### Interact with notification
+### Interact with controller
 
 To interact with controller you have a Delegate class and DataSource Class:
 
