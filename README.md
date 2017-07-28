@@ -31,6 +31,7 @@ Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q
 
   - iOS 9+
   - swift 3.0
+  - Access for Contacts
   
 ## Main features
 Here's a highlight of the main features you can find in SwiftMultiSelect:
