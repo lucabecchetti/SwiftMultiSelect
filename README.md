@@ -25,7 +25,7 @@ We support portrait and landscape orientation:
 
 ## Requirements
 
-  - iOS 9+
+  - iOS 10.3+
   - swift 3.0
   
 ## Main features
