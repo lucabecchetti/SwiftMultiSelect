@@ -82,7 +82,7 @@ Note: If you want to use a default value "phone", insert this string in yout inf
   .....
   
 	<key>NSContactsUsageDescription</key>
-	<string>This app needs access to contacts to find your friends.</string>
+	<string>This app needs access to contacts.</string>
   
   ....
   
