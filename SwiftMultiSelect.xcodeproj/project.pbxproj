@@ -15,7 +15,6 @@
 		B1491F391F28E7D600D5E44B /* ContactsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */; };
 		B15C34F91F25DE840001CC0A /* SwiftMultiSelect.h in Headers */ = {isa = PBXBuildFile; fileRef = B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */; };
-		B187C6541F2A48FB007B93F5 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = B187C6531F2A48FB007B93F5 /* Resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMultiSelect.h; sourceTree = "<group>"; };
 		B15C34F81F25DE840001CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMultiSelect.swift; sourceTree = "<group>"; };
-		B187C6531F2A48FB007B93F5 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 		B15C34F61F25DE840001CC0A /* SwiftMultiSelect */ = {
 			isa = PBXGroup;
 			children = (
-				B187C6531F2A48FB007B93F5 /* Resources */,
 				B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */,
 				B15C34F81F25DE840001CC0A /* Info.plist */,
 				B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */,
@@ -149,7 +146,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B187C6541F2A48FB007B93F5 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
