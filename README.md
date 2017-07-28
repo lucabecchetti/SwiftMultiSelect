@@ -231,11 +231,11 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
     //MARK: - SwiftMultiSelectDataSource
     
     func numberOfItemsInSwiftMultiSelect() -> Int {
-        return selectedItems.count
+        return items.count
     }
     
     func swiftMultiSelect(itemAtRow row: Int) -> SwiftMultiSelectItem {
-        return selectedItems[row]
+        return items[row]
     }
     
 
