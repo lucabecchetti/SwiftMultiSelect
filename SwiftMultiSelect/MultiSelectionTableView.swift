@@ -22,7 +22,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
             if searchString == "" {
                 return SwiftMultiSelect.items!.count
             }else{
-                return SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) }).count
+                return SwiftMultiSelect.items!.filter({$0.title.lowercased().contains(searchString.lowercased()) || ($0.description != nil && $0.description!.lowercased().contains(searchString.lowercased())) }).count
             }
         }else{
             
@@ -45,7 +45,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         var item:SwiftMultiSelectItem!
         
         if SwiftMultiSelect.dataSourceType == .phone{
-            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })[indexPath.row]
+            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.lowercased().contains(searchString.lowercased()) || ($0.description != nil && $0.description!.lowercased().contains(searchString.lowercased())) })[indexPath.row]
         }else{
             //Try to get item from delegate
             item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
@@ -155,7 +155,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         var item:SwiftMultiSelectItem!
 
         if SwiftMultiSelect.dataSourceType == .phone{
-            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })[indexPath.row]
+            item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.lowercased().contains(searchString.lowercased()) || ($0.description != nil && $0.description!.lowercased().contains(searchString.lowercased())) })[indexPath.row]
         }else{
             //Try to get item from delegate
             item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)

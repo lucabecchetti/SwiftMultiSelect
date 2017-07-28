@@ -81,7 +81,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
         if searchString == ""{
             selectedItems = items
         }else{
-            selectedItems = items.filter({$0.title.contains(searchString) || ($0.description != nil && $0.description!.contains(searchString)) })
+            selectedItems = items.filter({$0.title.lowercased().contains(searchString.lowercased()) || ($0.description != nil && $0.description!.lowercased().contains(searchString.lowercased())) })
         }
     }
 
