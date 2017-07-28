@@ -29,6 +29,23 @@ We support portrait and landscape orientation:
   - iOS 9+
   - swift 3.0
   
+## Main features
+Here's a highlight of the main features you can find in SwiftMultiSelect:
+
+* **Access PhoneBook or custom lists** Select contacts from phone book or from a custom lists
+* **Fast and smooth scrolling**.
+* **Multiple orientation** We support `portrait` and `landscape` orientation
+* **Fully customizable**. You can customize all programmatically
+  
+## You also may like
+
+Do you like `SwiftMultiSelect`? I'm also working on several other opensource libraries.
+
+Take a look here:
+
+* **[InAppNotify](https://github.com/lucabecchetti/InAppNotify)** - Manage in app notifications
+* **[SwiftMulticastProtocol](https://github.com/lucabecchetti/SwiftMulticastProtocol)** - send message to multiple classes
+  
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMultiSelect in your projects. You can install it with the following command:
