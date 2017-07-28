@@ -29,7 +29,7 @@ Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q
 
 ## Requirements
 
-  - iOS 10.3+
+  - iOS 9+
   - swift 3.0
   
 ## Main features
