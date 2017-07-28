@@ -1,4 +1,4 @@
-# SwiftMultiSelect - A tableview with graphical multi selection (contacts from PhoneBook or items from custom lists
+# SwiftMultiSelect - A tableview with graphical multi selection (contacts from PhoneBook or items from custom lists)
 <p align="center" >
   <img src="https://user-images.githubusercontent.com/16253548/28709765-d82d454a-7381-11e7-8cd6-8d34f5c4cfd3.png" width=400px alt="SwiftMultiSelect" title="SwiftMultiSelect">
 </p>
