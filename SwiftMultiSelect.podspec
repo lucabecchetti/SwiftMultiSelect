@@ -29,8 +29,4 @@ s.framework = "UIKit"
 # 8
 s.source_files = "SwiftMultiSelect/*.{swift}"
 
-s.resource_bundles = {
-    'SwiftMultiSelect' => ['SwiftMultiSelect/Resources/*.png']
-}
-
 end

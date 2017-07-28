@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SwiftMultiSelect.xcscheme</key>
+		<key>SwiftMultiSelectTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B15C34F31F25DE840001CC0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B15C35021F25DE9D0001CC0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B15C35181F25DEAB0001CC0A</key>
+		<key>B1E5D8651F2B1EDB006B0F28</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,16 @@
+PODS:
+  - SwiftMultiSelect (0.1.2)
+
+DEPENDENCIES:
+  - SwiftMultiSelect (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftMultiSelect:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftMultiSelect: 73c06903cd24b320c75a4d4104a30bea46072372
+
+PODFILE CHECKSUM: b624c929d38058b9b70882f86afc22defb1e4a3e
+
+COCOAPODS: 1.3.0.beta.1

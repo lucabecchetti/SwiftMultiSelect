@@ -9,45 +9,14 @@
 /* Begin PBXBuildFile section */
 		B13923E01F2A170500269574 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923DF1F2A170500269574 /* CustomCollectionCell.swift */; };
 		B13923E21F2A171800269574 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13923E11F2A171800269574 /* CustomTableCell.swift */; };
-		B14904E61F2A17CE0006864A /* SwiftMultiSelect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; };
-		B14904E71F2A17CE0006864A /* SwiftMultiSelect.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1491F331F28877000D5E44B /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F321F28877000D5E44B /* MultiSelectionViewController.swift */; };
 		B1491F351F28896100D5E44B /* MultiSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F341F28896100D5E44B /* MultiSelectionTableView.swift */; };
 		B1491F371F28961000D5E44B /* MultiSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F361F28961000D5E44B /* MultiSelectionCollectionView.swift */; };
 		B1491F391F28E7D600D5E44B /* ContactsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1491F381F28E7D600D5E44B /* ContactsLibrary.swift */; };
 		B15C34F91F25DE840001CC0A /* SwiftMultiSelect.h in Headers */ = {isa = PBXBuildFile; fileRef = B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B15C351C1F25DEAB0001CC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C351B1F25DEAB0001CC0A /* AppDelegate.swift */; };
-		B15C351E1F25DEAB0001CC0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C351D1F25DEAB0001CC0A /* ViewController.swift */; };
-		B15C35211F25DEAB0001CC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15C351F1F25DEAB0001CC0A /* Main.storyboard */; };
-		B15C35231F25DEAB0001CC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15C35221F25DEAB0001CC0A /* Assets.xcassets */; };
-		B15C35261F25DEAB0001CC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15C35241F25DEAB0001CC0A /* LaunchScreen.storyboard */; };
 		B15C352C1F25DEBC0001CC0A /* SwiftMultiSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */; };
 		B187C6541F2A48FB007B93F5 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = B187C6531F2A48FB007B93F5 /* Resources */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B14904E81F2A17CE0006864A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B15C34EB1F25DE840001CC0A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B15C34F31F25DE840001CC0A;
-			remoteInfo = SwiftMultiSelect;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B14904EA1F2A17CE0006864A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B14904E71F2A17CE0006864A /* SwiftMultiSelect.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B13923DF1F2A170500269574 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
@@ -59,13 +28,6 @@
 		B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMultiSelect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15C34F71F25DE840001CC0A /* SwiftMultiSelect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMultiSelect.h; sourceTree = "<group>"; };
 		B15C34F81F25DE840001CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B15C35191F25DEAB0001CC0A /* SwiftMultiSelectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMultiSelectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B15C351B1F25DEAB0001CC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B15C351D1F25DEAB0001CC0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B15C35201F25DEAB0001CC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B15C35221F25DEAB0001CC0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B15C35251F25DEAB0001CC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B15C35271F25DEAB0001CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15C352B1F25DEBC0001CC0A /* SwiftMultiSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMultiSelect.swift; sourceTree = "<group>"; };
 		B187C6531F2A48FB007B93F5 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,14 +40,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B15C35161F25DEAB0001CC0A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B14904E61F2A17CE0006864A /* SwiftMultiSelect.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				B15C34F61F25DE840001CC0A /* SwiftMultiSelect */,
-				B15C351A1F25DEAB0001CC0A /* SwiftMultiSelectDemo */,
 				B15C34F51F25DE840001CC0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */,
-				B15C35191F25DEAB0001CC0A /* SwiftMultiSelectDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,19 +74,6 @@
 				B13923E11F2A171800269574 /* CustomTableCell.swift */,
 			);
 			path = SwiftMultiSelect;
-			sourceTree = "<group>";
-		};
-		B15C351A1F25DEAB0001CC0A /* SwiftMultiSelectDemo */ = {
-			isa = PBXGroup;
-			children = (
-				B15C351B1F25DEAB0001CC0A /* AppDelegate.swift */,
-				B15C351D1F25DEAB0001CC0A /* ViewController.swift */,
-				B15C351F1F25DEAB0001CC0A /* Main.storyboard */,
-				B15C35221F25DEAB0001CC0A /* Assets.xcassets */,
-				B15C35241F25DEAB0001CC0A /* LaunchScreen.storyboard */,
-				B15C35271F25DEAB0001CC0A /* Info.plist */,
-			);
-			path = SwiftMultiSelectDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,25 +108,6 @@
 			productReference = B15C34F41F25DE840001CC0A /* SwiftMultiSelect.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B15C35181F25DEAB0001CC0A /* SwiftMultiSelectDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B15C35281F25DEAB0001CC0A /* Build configuration list for PBXNativeTarget "SwiftMultiSelectDemo" */;
-			buildPhases = (
-				B15C35151F25DEAB0001CC0A /* Sources */,
-				B15C35161F25DEAB0001CC0A /* Frameworks */,
-				B15C35171F25DEAB0001CC0A /* Resources */,
-				B14904EA1F2A17CE0006864A /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B14904E91F2A17CE0006864A /* PBXTargetDependency */,
-			);
-			name = SwiftMultiSelectDemo;
-			productName = SwiftMultiSelectDemo;
-			productReference = B15C35191F25DEAB0001CC0A /* SwiftMultiSelectDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,11 +122,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 49RE3G6CPG;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
-					};
-					B15C35181F25DEAB0001CC0A = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 49RE3G6CPG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -225,7 +140,6 @@
 			projectRoot = "";
 			targets = (
 				B15C34F31F25DE840001CC0A /* SwiftMultiSelect */,
-				B15C35181F25DEAB0001CC0A /* SwiftMultiSelectDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -236,16 +150,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B187C6541F2A48FB007B93F5 /* Resources in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B15C35171F25DEAB0001CC0A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B15C35261F25DEAB0001CC0A /* LaunchScreen.storyboard in Resources */,
-				B15C35231F25DEAB0001CC0A /* Assets.xcassets in Resources */,
-				B15C35211F25DEAB0001CC0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,43 +170,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B15C35151F25DEAB0001CC0A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B15C351E1F25DEAB0001CC0A /* ViewController.swift in Sources */,
-				B15C351C1F25DEAB0001CC0A /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B14904E91F2A17CE0006864A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B15C34F31F25DE840001CC0A /* SwiftMultiSelect */;
-			targetProxy = B14904E81F2A17CE0006864A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B15C351F1F25DEAB0001CC0A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B15C35201F25DEAB0001CC0A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B15C35241F25DEAB0001CC0A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B15C35251F25DEAB0001CC0A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B15C34FA1F25DE840001CC0A /* Debug */ = {
@@ -447,36 +315,6 @@
 			};
 			name = Release;
 		};
-		B15C35291F25DEAB0001CC0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49RE3G6CPG;
-				INFOPLIST_FILE = SwiftMultiSelectDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.brokenice.SwiftMultiSelectDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		B15C352A1F25DEAB0001CC0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49RE3G6CPG;
-				INFOPLIST_FILE = SwiftMultiSelectDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.brokenice.SwiftMultiSelectDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -494,15 +332,6 @@
 			buildConfigurations = (
 				B15C34FD1F25DE840001CC0A /* Debug */,
 				B15C34FE1F25DE840001CC0A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B15C35281F25DEAB0001CC0A /* Build configuration list for PBXNativeTarget "SwiftMultiSelectDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B15C35291F25DEAB0001CC0A /* Debug */,
-				B15C352A1F25DEAB0001CC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,6 @@
+framework module SwiftMultiSelect {
+  umbrella header "SwiftMultiSelect-umbrella.h"
+
+  export *
+  module * { export * }
+}

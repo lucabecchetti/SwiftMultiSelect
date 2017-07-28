@@ -85,11 +85,6 @@ public class SwiftMultiSelect{
     }
     
     public class func getImageFromBundle(name: String) -> UIImage {
-        let podBundle = Bundle(for: SwiftMultiSelect.self)
-        if let url = podBundle.url(forResource: "SwiftMultiSelect", withExtension: "bundle") {
-            let bundle = Bundle(url: url)
-            return UIImage(named: name, in: bundle, compatibleWith: nil)!
-        }
         return UIImage()
     }
     
@@ -105,7 +100,7 @@ public struct Config {
     /// Title for done button
     public static var doneString            :   String     = "Done"
     //Placeholder image during lazy load
-    public static var placeholder_image     :   UIImage     = SwiftMultiSelect.getImageFromBundle(name: "user_blank_1")
+    public static var placeholder_image     :   UIImage     = SwiftMultiSelect.getImageFromBundle(name: "user_blank")
     /// Array of colors to use in initials
     public static var colorArray        :   [UIColor]  = [
         ThemeColors.amethystColor,
@@ -145,7 +140,7 @@ public struct Config {
     public struct selectorStyle{
         
         //Image asset for remove button
-        public static var removeButtonImage     :   UIImage = SwiftMultiSelect.getImageFromBundle(name: "error")
+        public static var removeButtonImage     :   UIImage = SwiftMultiSelect.getImageFromBundle(name: "remove")
         //The height of selectorview, all subviews will be resized
         public static var selectionHeight       :   Double  = 90.0
         //Scale factor for size of imageavatar based on cell size
