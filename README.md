@@ -23,6 +23,10 @@ We support portrait and landscape orientation:
 
 ![simulator screen shot 28 lug 2017 11 32 34](https://user-images.githubusercontent.com/16253548/28711623-79df6d68-7388-11e7-9f81-e36c07c326d3.png)
 
+## Demo
+
+Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q6g?device=iphone7&scale=100&orientation=portrait&osVersion=10.3)
+
 ## Requirements
 
   - iOS 10.3+
