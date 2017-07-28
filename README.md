@@ -3,7 +3,7 @@
   <img src="https://user-images.githubusercontent.com/16253548/28709765-d82d454a-7381-11e7-8cd6-8d34f5c4cfd3.png" width=400px alt="SwiftMultiSelect" title="SwiftMultiSelect">
 </p>
 
-[![Version](https://img.shields.io/badge/pod-0.2.1-blue.svg)](https://cocoapods.org/pods/InAppNotify) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/InAppNotify) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/InAppNotify) [![Swift3](https://img.shields.io/badge/swift3-compatible-brightgreen.svg)](https://cocoapods.org/pods/InAppNotify)
+[![Version](https://img.shields.io/badge/pod-0.2.2-blue.svg)](https://cocoapods.org/pods/InAppNotify) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/InAppNotify) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/InAppNotify) [![Swift3](https://img.shields.io/badge/swift3-compatible-brightgreen.svg)](https://cocoapods.org/pods/InAppNotify)
 
 During develop of my apps, i usually needed to select more than one element from a tableview, but i don't like the native ios integration, i think is not graphically clear, so, i created this library. Choose SwiftMultiSelect for your next project, I'll be happy to give you a little help!
 
@@ -22,6 +22,10 @@ We support portrait and landscape orientation:
 
 
 ![simulator screen shot 28 lug 2017 11 32 34](https://user-images.githubusercontent.com/16253548/28711623-79df6d68-7388-11e7-9f81-e36c07c326d3.png)
+
+## Demo
+
+Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q6g?device=iphone7&scale=100&orientation=portrait&osVersion=10.3)
 
 ## Requirements
 
