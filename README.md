@@ -18,7 +18,7 @@ During develop of my apps, i usually needed to select more than one element from
 </p>
 
 
-We support portrait and landscape orientation:
+We support **portrait** and **landscape** orientation:
 
 
 ![simulator screen shot 28 lug 2017 11 32 34](https://user-images.githubusercontent.com/16253548/28711623-79df6d68-7388-11e7-9f81-e36c07c326d3.png)
