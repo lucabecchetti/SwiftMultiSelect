@@ -26,7 +26,7 @@ During develop of my apps, i usually needed to select more than one element from
   
 ## Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like InAppNotify in your projects. You can install it with the following command:
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMultiSelect in your projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -34,7 +34,7 @@ $ gem install cocoapods
 
 #### Podfile
 
-To integrate InAppNotify into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate SwiftMultiSelect into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
