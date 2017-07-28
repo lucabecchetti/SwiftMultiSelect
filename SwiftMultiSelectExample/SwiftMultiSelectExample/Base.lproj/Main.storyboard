@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftMultiSelectDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftMultiSelectExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -76,12 +75,12 @@
                             <constraint firstItem="K55-Re-1mb" firstAttribute="top" secondItem="vNw-Xz-17k" secondAttribute="bottom" constant="22" id="2aj-zW-p1i"/>
                             <constraint firstItem="Zst-rm-beT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AXU-ql-cPk"/>
                             <constraint firstItem="tNG-Yf-ZmG" firstAttribute="top" secondItem="K55-Re-1mb" secondAttribute="bottom" constant="18" id="B54-HY-psq"/>
+                            <constraint firstItem="vNw-Xz-17k" firstAttribute="top" secondItem="Zst-rm-beT" secondAttribute="bottom" constant="15" id="C0a-Mh-YNA"/>
                             <constraint firstItem="pPl-dp-wlh" firstAttribute="leading" secondItem="K55-Re-1mb" secondAttribute="trailing" constant="8" id="GWs-Or-VfA"/>
                             <constraint firstItem="RZX-DN-3jy" firstAttribute="width" secondItem="pPl-dp-wlh" secondAttribute="width" id="JDe-gV-l16"/>
                             <constraint firstItem="tNG-Yf-ZmG" firstAttribute="leading" secondItem="K55-Re-1mb" secondAttribute="leading" id="Rjs-rn-2fT"/>
-                            <constraint firstItem="vNw-Xz-17k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UhJ-we-2th"/>
+                            <constraint firstItem="vNw-Xz-17k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WbO-81-qwi"/>
                             <constraint firstItem="pPl-dp-wlh" firstAttribute="centerY" secondItem="K55-Re-1mb" secondAttribute="centerY" id="evZ-OB-GCu"/>
-                            <constraint firstItem="vNw-Xz-17k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nBn-Zl-DoK"/>
                             <constraint firstItem="Zst-rm-beT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="qbo-dV-Vwh"/>
                             <constraint firstItem="RZX-DN-3jy" firstAttribute="leading" secondItem="pPl-dp-wlh" secondAttribute="leading" id="rFi-DY-3td"/>
                             <constraint firstItem="Zst-rm-beT" firstAttribute="top" secondItem="T4r-0d-6hf" secondAttribute="bottom" constant="-28" id="rod-qf-Rdf"/>
