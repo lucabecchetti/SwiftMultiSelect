@@ -1,0 +1,6 @@
+framework module Pods_SwiftMultiSelectExample {
+  umbrella header "Pods-SwiftMultiSelectExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

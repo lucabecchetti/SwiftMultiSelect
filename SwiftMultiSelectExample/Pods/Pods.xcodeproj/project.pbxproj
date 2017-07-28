@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BEAAA66012ACDF222158C088EA1EC98 /* SwiftMultiSelect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 625F3DC744055124C9CBDF9382061C73 /* SwiftMultiSelect-dummy.m */; };
+		236D358807826EA506F58FF8A37F55E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		23F55CF7D4EF2BA2658B4A73DFC2AE2A /* Pods-SwiftMultiSelectExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DA79F605BC04D05057EFE81A5CB008 /* Pods-SwiftMultiSelectExample-dummy.m */; };
+		2C8C3BDE5B53C084CBCC039524438348 /* Pods-SwiftMultiSelectExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBEAD688B1630E39500EF527BEF4DADB /* Pods-SwiftMultiSelectExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3264E69EF1EC4E08FA1899DE15F9939F /* MultiSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F9928BCE0C561E7FD3C26AB2C4E0 /* MultiSelectionViewController.swift */; };
+		4847B650951E610C9BA6ABEACE41F81D /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E1F52F6E76EBC962D45A4F6138BF4 /* CustomTableCell.swift */; };
+		5F18C4F27ACB68F4C07E7B164DFF3BC4 /* MultiSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C670599C8E81C659808C1AA4D0C62A9 /* MultiSelectionTableView.swift */; };
+		609A0E1022034522689B8A874AD59B1E /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A092B2402E853C071F4ABBAA6C2865B /* CustomCollectionCell.swift */; };
+		8125568154F27F0D8AC19A2A2A5FAAD1 /* SwiftMultiSelect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D37757AEBE43FB1C5D5A465E7E0EFB2C /* SwiftMultiSelect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D81CCCC0F54BAC9EAD50B04A00337A4 /* SwiftMultiSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5951048D102AABD7FC14240F8517497B /* SwiftMultiSelect.swift */; };
+		B06767207A8FF0B1F8DDA4860DFC176E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C6B06BE06DABCF45ED0D9191D244E3 /* Assets.xcassets */; };
+		BA96A509168C7BE88998BFEECFE81F2E /* ContactsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CA702E55560018EF85DBD60C6666B /* ContactsLibrary.swift */; };
+		C390041BF2EAA5C151EB156D9887690E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		E4C6C03AD12C189A881C38A31B29270B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		F9EDC8216A095FD93AB29E7DBB735ECC /* MultiSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C877646BD51220588BEB7C45F04B2987 /* MultiSelectionCollectionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADF6910295993ABE9F1590211C3798EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4878A69C8B5391B2485FBF9E51BFB57;
+			remoteInfo = SwiftMultiSelect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0680D02F86EAA08ED3F9ABC3743D8EDF /* Pods-SwiftMultiSelectExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftMultiSelectExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		08DA79F605BC04D05057EFE81A5CB008 /* Pods-SwiftMultiSelectExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftMultiSelectExample-dummy.m"; sourceTree = "<group>"; };
+		0A092B2402E853C071F4ABBAA6C2865B /* CustomCollectionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		0D4E1F52F6E76EBC962D45A4F6138BF4 /* CustomTableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		2C670599C8E81C659808C1AA4D0C62A9 /* MultiSelectionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultiSelectionTableView.swift; sourceTree = "<group>"; };
+		35808EFB77EF2AD67B563C9A79ADCFBD /* SwiftMultiSelect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftMultiSelect.framework; path = SwiftMultiSelect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E86947696A89CD08681349A69329CA4 /* SwiftMultiSelect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftMultiSelect.modulemap; sourceTree = "<group>"; };
+		405344B388FA45BC823142D1A154D423 /* Pods-SwiftMultiSelectExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMultiSelectExample-frameworks.sh"; sourceTree = "<group>"; };
+		5281FEF3930C2EF140B09CCC8D451E90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C6B06BE06DABCF45ED0D9191D244E3 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		547CA702E55560018EF85DBD60C6666B /* ContactsLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsLibrary.swift; sourceTree = "<group>"; };
+		5951048D102AABD7FC14240F8517497B /* SwiftMultiSelect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftMultiSelect.swift; sourceTree = "<group>"; };
+		5E471611BE134725EDD835EF8ACFAE77 /* Pods-SwiftMultiSelectExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftMultiSelectExample.modulemap"; sourceTree = "<group>"; };
+		625F3DC744055124C9CBDF9382061C73 /* SwiftMultiSelect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftMultiSelect-dummy.m"; sourceTree = "<group>"; };
+		64282000BE654C78F4BEB0D224B440DA /* SwiftMultiSelect-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMultiSelect-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A96F631BD152F1A3E12B03F55396C78C /* Pods_SwiftMultiSelectExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftMultiSelectExample.framework; path = "Pods-SwiftMultiSelectExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB828CAC30C41B9B44CD1E551E24346F /* Pods-SwiftMultiSelectExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMultiSelectExample.release.xcconfig"; sourceTree = "<group>"; };
+		ADB83487D503902B865864A56F0D2873 /* Pods-SwiftMultiSelectExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftMultiSelectExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B7A870670BA51AE80809F0A981CC59D3 /* Pods-SwiftMultiSelectExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftMultiSelectExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		BA1327F00AA288D20A83800EF1C2B334 /* SwiftMultiSelect.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftMultiSelect.xcconfig; sourceTree = "<group>"; };
+		C877646BD51220588BEB7C45F04B2987 /* MultiSelectionCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultiSelectionCollectionView.swift; sourceTree = "<group>"; };
+		CA5AF7B0CB0375C338643E76F3087CB1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D37757AEBE43FB1C5D5A465E7E0EFB2C /* SwiftMultiSelect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMultiSelect-umbrella.h"; sourceTree = "<group>"; };
+		D774336E2B280A8645095605388E7596 /* Pods-SwiftMultiSelectExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftMultiSelectExample-resources.sh"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E9D4F9928BCE0C561E7FD3C26AB2C4E0 /* MultiSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultiSelectionViewController.swift; sourceTree = "<group>"; };
+		EBEAD688B1630E39500EF527BEF4DADB /* Pods-SwiftMultiSelectExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftMultiSelectExample-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D99B8ACDD6EAF1031B5C47BD738B05B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390041BF2EAA5C151EB156D9887690E /* Foundation.framework in Frameworks */,
+				E4C6C03AD12C189A881C38A31B29270B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D568858BBE394AD09A64B2E2EECE57F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236D358807826EA506F58FF8A37F55E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		022E1DE2F4038687B6AEC30EF543BC47 /* SwiftMultiSelect */ = {
+			isa = PBXGroup;
+			children = (
+				B804A8F33B9CFE20D8C5AFB829671757 /* Assets */,
+			);
+			name = SwiftMultiSelect;
+			path = SwiftMultiSelect;
+			sourceTree = "<group>";
+		};
+		046511239F73018774955DCEDCE4B132 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32B8F9D3DC4C813EF8A9D7738445F7A0 /* SwiftMultiSelect */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		32B8F9D3DC4C813EF8A9D7738445F7A0 /* SwiftMultiSelect */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2D4863D25966EA164019149FCB906 /* Resources */,
+				4DAF1DEFBC7B680278F02BA8B56BEF96 /* Support Files */,
+				82FA19CDA7223A8A060FA5BCFFA27465 /* SwiftMultiSelect */,
+			);
+			name = SwiftMultiSelect;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3AA2D4863D25966EA164019149FCB906 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				022E1DE2F4038687B6AEC30EF543BC47 /* SwiftMultiSelect */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4DAF1DEFBC7B680278F02BA8B56BEF96 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5281FEF3930C2EF140B09CCC8D451E90 /* Info.plist */,
+				3E86947696A89CD08681349A69329CA4 /* SwiftMultiSelect.modulemap */,
+				BA1327F00AA288D20A83800EF1C2B334 /* SwiftMultiSelect.xcconfig */,
+				625F3DC744055124C9CBDF9382061C73 /* SwiftMultiSelect-dummy.m */,
+				64282000BE654C78F4BEB0D224B440DA /* SwiftMultiSelect-prefix.pch */,
+				D37757AEBE43FB1C5D5A465E7E0EFB2C /* SwiftMultiSelect-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "SwiftMultiSelectExample/Pods/Target Support Files/SwiftMultiSelect";
+			sourceTree = "<group>";
+		};
+		593E38AB241981118EEA217B603745A8 /* Pods-SwiftMultiSelectExample */ = {
+			isa = PBXGroup;
+			children = (
+				CA5AF7B0CB0375C338643E76F3087CB1 /* Info.plist */,
+				5E471611BE134725EDD835EF8ACFAE77 /* Pods-SwiftMultiSelectExample.modulemap */,
+				0680D02F86EAA08ED3F9ABC3743D8EDF /* Pods-SwiftMultiSelectExample-acknowledgements.markdown */,
+				B7A870670BA51AE80809F0A981CC59D3 /* Pods-SwiftMultiSelectExample-acknowledgements.plist */,
+				08DA79F605BC04D05057EFE81A5CB008 /* Pods-SwiftMultiSelectExample-dummy.m */,
+				405344B388FA45BC823142D1A154D423 /* Pods-SwiftMultiSelectExample-frameworks.sh */,
+				D774336E2B280A8645095605388E7596 /* Pods-SwiftMultiSelectExample-resources.sh */,
+				EBEAD688B1630E39500EF527BEF4DADB /* Pods-SwiftMultiSelectExample-umbrella.h */,
+				ADB83487D503902B865864A56F0D2873 /* Pods-SwiftMultiSelectExample.debug.xcconfig */,
+				AB828CAC30C41B9B44CD1E551E24346F /* Pods-SwiftMultiSelectExample.release.xcconfig */,
+			);
+			name = "Pods-SwiftMultiSelectExample";
+			path = "Target Support Files/Pods-SwiftMultiSelectExample";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				046511239F73018774955DCEDCE4B132 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				8B3A8F35F9C479EB7193FB958E4E6316 /* Products */,
+				F9AEF95FBA598B137188A76C4E96F61D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		82FA19CDA7223A8A060FA5BCFFA27465 /* SwiftMultiSelect */ = {
+			isa = PBXGroup;
+			children = (
+				547CA702E55560018EF85DBD60C6666B /* ContactsLibrary.swift */,
+				0A092B2402E853C071F4ABBAA6C2865B /* CustomCollectionCell.swift */,
+				0D4E1F52F6E76EBC962D45A4F6138BF4 /* CustomTableCell.swift */,
+				C877646BD51220588BEB7C45F04B2987 /* MultiSelectionCollectionView.swift */,
+				2C670599C8E81C659808C1AA4D0C62A9 /* MultiSelectionTableView.swift */,
+				E9D4F9928BCE0C561E7FD3C26AB2C4E0 /* MultiSelectionViewController.swift */,
+				5951048D102AABD7FC14240F8517497B /* SwiftMultiSelect.swift */,
+			);
+			name = SwiftMultiSelect;
+			path = SwiftMultiSelect;
+			sourceTree = "<group>";
+		};
+		8B3A8F35F9C479EB7193FB958E4E6316 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A96F631BD152F1A3E12B03F55396C78C /* Pods_SwiftMultiSelectExample.framework */,
+				35808EFB77EF2AD67B563C9A79ADCFBD /* SwiftMultiSelect.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B804A8F33B9CFE20D8C5AFB829671757 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				52C6B06BE06DABCF45ED0D9191D244E3 /* Assets.xcassets */,
+			);
+			name = Assets;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F9AEF95FBA598B137188A76C4E96F61D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				593E38AB241981118EEA217B603745A8 /* Pods-SwiftMultiSelectExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		55F5A1ADA17033EED9BDF77270BF7B6A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8125568154F27F0D8AC19A2A2A5FAAD1 /* SwiftMultiSelect-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FFB2FDB091B2019273166B14104B707 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C8C3BDE5B53C084CBCC039524438348 /* Pods-SwiftMultiSelectExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4E5EFBD9269CFC1A5A1ABE06C322EE6C /* Pods-SwiftMultiSelectExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19452DC347FB02841ACA6D907B936C4A /* Build configuration list for PBXNativeTarget "Pods-SwiftMultiSelectExample" */;
+			buildPhases = (
+				CEE9494AD2F35C9BFE6EB5A6DB5993FD /* Sources */,
+				D568858BBE394AD09A64B2E2EECE57F7 /* Frameworks */,
+				6FFB2FDB091B2019273166B14104B707 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				061D1C2BA51F58A22AD8A5CE766891BC /* PBXTargetDependency */,
+			);
+			name = "Pods-SwiftMultiSelectExample";
+			productName = "Pods-SwiftMultiSelectExample";
+			productReference = A96F631BD152F1A3E12B03F55396C78C /* Pods_SwiftMultiSelectExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E4878A69C8B5391B2485FBF9E51BFB57 /* SwiftMultiSelect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36F8080D17CA5C1C65047105FA4C61B /* Build configuration list for PBXNativeTarget "SwiftMultiSelect" */;
+			buildPhases = (
+				403A599688FAABB4C2BF11166EDA3C0F /* Sources */,
+				3D99B8ACDD6EAF1031B5C47BD738B05B /* Frameworks */,
+				00146D9BCE92C2D3506A19A8F7D64C70 /* Resources */,
+				55F5A1ADA17033EED9BDF77270BF7B6A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftMultiSelect;
+			productName = SwiftMultiSelect;
+			productReference = 35808EFB77EF2AD67B563C9A79ADCFBD /* SwiftMultiSelect.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8B3A8F35F9C479EB7193FB958E4E6316 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E5EFBD9269CFC1A5A1ABE06C322EE6C /* Pods-SwiftMultiSelectExample */,
+				E4878A69C8B5391B2485FBF9E51BFB57 /* SwiftMultiSelect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00146D9BCE92C2D3506A19A8F7D64C70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B06767207A8FF0B1F8DDA4860DFC176E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		403A599688FAABB4C2BF11166EDA3C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA96A509168C7BE88998BFEECFE81F2E /* ContactsLibrary.swift in Sources */,
+				609A0E1022034522689B8A874AD59B1E /* CustomCollectionCell.swift in Sources */,
+				4847B650951E610C9BA6ABEACE41F81D /* CustomTableCell.swift in Sources */,
+				F9EDC8216A095FD93AB29E7DBB735ECC /* MultiSelectionCollectionView.swift in Sources */,
+				5F18C4F27ACB68F4C07E7B164DFF3BC4 /* MultiSelectionTableView.swift in Sources */,
+				3264E69EF1EC4E08FA1899DE15F9939F /* MultiSelectionViewController.swift in Sources */,
+				0BEAAA66012ACDF222158C088EA1EC98 /* SwiftMultiSelect-dummy.m in Sources */,
+				8D81CCCC0F54BAC9EAD50B04A00337A4 /* SwiftMultiSelect.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE9494AD2F35C9BFE6EB5A6DB5993FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23F55CF7D4EF2BA2658B4A73DFC2AE2A /* Pods-SwiftMultiSelectExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		061D1C2BA51F58A22AD8A5CE766891BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftMultiSelect;
+			target = E4878A69C8B5391B2485FBF9E51BFB57 /* SwiftMultiSelect */;
+			targetProxy = ADF6910295993ABE9F1590211C3798EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		66A2B529CD703362A9110801CACBB77B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB828CAC30C41B9B44CD1E551E24346F /* Pods-SwiftMultiSelectExample.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMultiSelectExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMultiSelectExample/Pods-SwiftMultiSelectExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftMultiSelectExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BAB75E24E779F6E792F3BEAC3BA15F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA1327F00AA288D20A83800EF1C2B334 /* SwiftMultiSelect.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftMultiSelect/SwiftMultiSelect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftMultiSelect/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftMultiSelect/SwiftMultiSelect.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftMultiSelect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A7E615CDAAE1128DE884709B85BB8D7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB83487D503902B865864A56F0D2873 /* Pods-SwiftMultiSelectExample.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftMultiSelectExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftMultiSelectExample/Pods-SwiftMultiSelectExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SwiftMultiSelectExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF26A3C5B6EDA309192C6025F703DE0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FBC66206E2E005F6B2B854A5A42C080B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA1327F00AA288D20A83800EF1C2B334 /* SwiftMultiSelect.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftMultiSelect/SwiftMultiSelect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftMultiSelect/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftMultiSelect/SwiftMultiSelect.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftMultiSelect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19452DC347FB02841ACA6D907B936C4A /* Build configuration list for PBXNativeTarget "Pods-SwiftMultiSelectExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E615CDAAE1128DE884709B85BB8D7F /* Debug */,
+				66A2B529CD703362A9110801CACBB77B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF26A3C5B6EDA309192C6025F703DE0A /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A36F8080D17CA5C1C65047105FA4C61B /* Build configuration list for PBXNativeTarget "SwiftMultiSelect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC66206E2E005F6B2B854A5A42C080B /* Debug */,
+				9BAB75E24E779F6E792F3BEAC3BA15F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
