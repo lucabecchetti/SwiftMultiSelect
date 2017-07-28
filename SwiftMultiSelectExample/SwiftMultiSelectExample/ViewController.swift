@@ -27,6 +27,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
         badge.layer.cornerRadius    = 25
         createItems()
        
+        Config.doneString = "Ok"
         SwiftMultiSelect.dataSource     = self
         SwiftMultiSelect.delegate       = self
     }
@@ -38,7 +39,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
         self.items.removeAll()
         self.initialValues.removeAll()
         for i in 0..<50{
-            items.append(SwiftMultiSelectItem(row: i, title: "test\(i)", description: "description for: \(i)"))
+            items.append(SwiftMultiSelectItem(row: i, title: "test\(i)", description: "description for: \(i)", imageURL : (i == 1 ? "https://randomuser.me/api/portraits/women/68.jpg" : nil)))
         }
         self.initialValues = [self.items.first!,self.items[1],self.items[2]]
         self.selectedItems = items

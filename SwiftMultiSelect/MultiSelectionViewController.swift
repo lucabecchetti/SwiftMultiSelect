@@ -47,7 +47,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //Build collectin view
         let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         selected.backgroundColor        = Config.selectorStyle.backgroundColor
-        //selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
+        selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
         return selected
         
     }()
@@ -169,7 +169,6 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         selectionScrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive                 = true
         selectionScrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive               = true
         selectionScrollView.heightAnchor.constraint(equalToConstant: CGFloat(Config.selectorStyle.selectionHeight)).isActive = true
-        selectionScrollView.isHidden = true
         //Add all constraints to view
         view.addConstraints(stackView_H)
         view.addConstraints(stackView_V)
