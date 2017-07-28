@@ -7,7 +7,7 @@
 
 During develop of my apps, i usually needed to select more than one element from a tableview, but i don't like the native ios integration, i think is not graphically clear, so, i created this library. Choose SwiftMultiSelect for your next project, I'll be happy to give you a little help!
 
-<p align="center" >★★ <b>Star our github repository to help us!, or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZD2RPBADPA6G">pay me a coffee</a></b> ★★</p>
+<p align="center" >★★ <b>Star our github repository to help us!, or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BZD2RPBADPA6G" target="_blank"> ☕ pay me a coffee</a></b> ★★</p>
 <p align="center" >Created by <a href="http://www.lucabecchetti.com">Luca Becchetti</a></p>
 
 ## Screenshots
