@@ -48,8 +48,9 @@ Do you like `SwiftMultiSelect`? I'm also working on several other opensource lib
 Take a look here:
 
 * **[InAppNotify](https://github.com/lucabecchetti/InAppNotify)** - Manage in app notifications
+* **[CountriesViewController](https://github.com/lucabecchetti/CountriesViewController)** - Countries selection view
 * **[SwiftMulticastProtocol](https://github.com/lucabecchetti/SwiftMulticastProtocol)** - send message to multiple classes
-  
+
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMultiSelect in your projects. You can install it with the following command:
