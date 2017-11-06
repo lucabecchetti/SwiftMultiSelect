@@ -380,6 +380,7 @@ override func viewDidLoad() {
 ## Projects using SwiftMultiSelect
 
 - Frind - [www.frind.it](https://www.frind.it) 
+- OnItsWay - [OnItsWay](https://itunes.apple.com/us/app/onitsway-deliveries-made-easy/id1190157855?ls=1&mt=8)
 
 ### Your App and SwiftMultiSelect
 I'm interested in making a list of all projects which use this library. Feel free to open an Issue on GitHub with the name and links of your project; we'll add it to this site.
