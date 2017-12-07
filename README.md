@@ -1,9 +1,9 @@
-# SwiftMultiSelect - A tableview with graphical multi selection (contacts from PhoneBook or items from custom lists
+# SwiftMultiSelect - A tableview with graphical multi selection (contacts from PhoneBook or items from custom lists)
 <p align="center" >
   <img src="https://user-images.githubusercontent.com/16253548/28709765-d82d454a-7381-11e7-8cd6-8d34f5c4cfd3.png" width=400px alt="SwiftMultiSelect" title="SwiftMultiSelect">
 </p>
 
-[![Version](https://img.shields.io/badge/pod-0.2.2-blue.svg)](https://cocoapods.org/pods/InAppNotify) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/InAppNotify) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/InAppNotify) [![Swift3](https://img.shields.io/badge/swift3-compatible-brightgreen.svg)](https://cocoapods.org/pods/InAppNotify)
+[![Version](https://img.shields.io/badge/pod-0.2.3-blue.svg)](https://cocoapods.org/pods/InAppNotify) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/InAppNotify) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/InAppNotify) [![Swift3](https://img.shields.io/badge/swift3-compatible-brightgreen.svg)](https://cocoapods.org/pods/InAppNotify)
 
 During develop of my apps, i usually needed to select more than one element from a tableview, but i don't like the native ios integration, i think is not graphically clear, so, i created this library. Choose SwiftMultiSelect for your next project, I'll be happy to give you a little help!
 
@@ -18,7 +18,7 @@ During develop of my apps, i usually needed to select more than one element from
 </p>
 
 
-We support portrait and landscape orientation:
+We support **portrait** and **landscape** orientation:
 
 
 ![simulator screen shot 28 lug 2017 11 32 34](https://user-images.githubusercontent.com/16253548/28711623-79df6d68-7388-11e7-9f81-e36c07c326d3.png)
@@ -31,6 +31,7 @@ Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q
 
   - iOS 9+
   - swift 3.0
+  - Access for Contacts
   
 ## Main features
 Here's a highlight of the main features you can find in SwiftMultiSelect:
@@ -47,8 +48,9 @@ Do you like `SwiftMultiSelect`? I'm also working on several other opensource lib
 Take a look here:
 
 * **[InAppNotify](https://github.com/lucabecchetti/InAppNotify)** - Manage in app notifications
+* **[CountriesViewController](https://github.com/lucabecchetti/CountriesViewController)** - Countries selection view
 * **[SwiftMulticastProtocol](https://github.com/lucabecchetti/SwiftMulticastProtocol)** - send message to multiple classes
-  
+
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMultiSelect in your projects. You can install it with the following command:
@@ -230,18 +232,18 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
     //MARK: - SwiftMultiSelectDataSource
     
     func numberOfItemsInSwiftMultiSelect() -> Int {
-        return selectedItems.count
+        return items.count
     }
     
     func swiftMultiSelect(itemAtRow row: Int) -> SwiftMultiSelectItem {
-        return selectedItems[row]
+        return items[row]
     }
     
 
 }
 ```
 
-### Interact with notification
+### Interact with controller
 
 To interact with controller you have a Delegate class and DataSource Class:
 
@@ -378,6 +380,7 @@ override func viewDidLoad() {
 ## Projects using SwiftMultiSelect
 
 - Frind - [www.frind.it](https://www.frind.it) 
+- OnItsWay - [OnItsWay](https://itunes.apple.com/us/app/onitsway-deliveries-made-easy/id1190157855?ls=1&mt=8)
 
 ### Your App and SwiftMultiSelect
 I'm interested in making a list of all projects which use this library. Feel free to open an Issue on GitHub with the name and links of your project; we'll add it to this site.
