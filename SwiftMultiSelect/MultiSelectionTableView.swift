@@ -225,7 +225,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         self.tableView.reloadData()
     }
     
-    func hideKeyboardWithSearchBar(_ searchBar:UISearchBar){
+    @objc func hideKeyboardWithSearchBar(_ searchBar:UISearchBar){
         searchBar.resignFirstResponder()
     }
     
