@@ -215,7 +215,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchString = searchText
         
-        if(searchText.characters.count<=0){
+        if (searchText.isEmpty) {
             self.perform(#selector(self.hideKeyboardWithSearchBar(_:)), with: searchBar, afterDelay: 0)
             self.searchString = ""
         }
