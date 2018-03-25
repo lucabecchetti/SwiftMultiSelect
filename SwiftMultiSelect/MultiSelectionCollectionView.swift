@@ -9,7 +9,7 @@
 import Foundation
 import Contacts
 
-extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -82,10 +82,8 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
         return cell
         
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize
-    {
-        
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: CGFloat(Config.selectorStyle.selectionHeight),height: CGFloat(Config.selectorStyle.selectionHeight))
     }
     
