@@ -10,32 +10,32 @@ import Foundation
 
 /// Define the type of datasource
 public enum SwiftMultiSelectSourceType : Int{
-    
+
     case phone  =   0
     case custom =   1
-    
+
 }
 
 /// Main static class
 public class SwiftMultiSelect{
 
     public static var items             :   [SwiftMultiSelectItem]?
-    
+
     public static var dataSourceType    :   SwiftMultiSelectSourceType? = .phone{
         didSet{
-            
+
             if self.dataSourceType == .phone{
                 self.getContacts()
             }else{
                 self.items = nil
             }
-            
+
         }
     }
-    
+
     /// Delegate reference
     public static var delegate          :   SwiftMultiSelectDelegate?{
-        
+
         didSet{
             if self.dataSourceType == .phone{
                 self.getContacts()
@@ -43,15 +43,15 @@ public class SwiftMultiSelect{
                 self.items = nil
             }
         }
-        
+
     }
-    
+
     public static var dataSource        :   SwiftMultiSelectDataSource?
-    
+
     /// Array of initial items selected
     public static var initialSelected   :   [SwiftMultiSelectItem] = [SwiftMultiSelectItem]()
-    
-    
+
+
     /// Function to present a selector in a UIViewContoller claass
     ///
     /// - Parameter to: UIViewController current visibile
@@ -59,18 +59,18 @@ public class SwiftMultiSelect{
 
         // Create instance of selector
         let selector            = MultiSelecetionViewController()
-        
+
         // Set initial items
         selector.selectedItems  = initialSelected
-        
+
         //Create navigation controller
         let navController       = UINavigationController(rootViewController: selector)
-        
+
         // Present selectora
         to.present(navController, animated: true, completion: nil)
-        
+
     }
-    
+
     private class func getContacts(){
         //ATTENTION: You have to provide a info.plist string for access contacts
         //<key>NSContactsUsageDescription</key>
@@ -78,17 +78,17 @@ public class SwiftMultiSelect{
         //
         //Retrieve contacts from phone
         ContactsLibrary.getContacts { (success, data) in
-            
+
             self.items = data!
-            
+
         }
     }
-    
+
     class func image(named name: String) -> UIImage? {
         let image = UIImage(named: name) ?? UIImage(named: name, in: Bundle(for: self), compatibleWith: nil)
         return image
     }
-    
+
 }
 
 /// Public struct for configuration and customizations
@@ -112,10 +112,10 @@ public struct Config {
         ThemeColors.pumpkinColor,
         ThemeColors.sunflowerColor
     ]
-    
+
     /// Define the style of tableview
     public struct tableStyle{
-        
+
         //Background color of tableview
         public static var backgroundColor       :   UIColor = .white
         //Height of single row
@@ -136,10 +136,10 @@ public struct Config {
         public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
 
     }
-    
+
     /// Define the style of scrollview
     public struct selectorStyle{
-        
+
         //Image asset for remove button
         public static var removeButtonImage     :   UIImage = SwiftMultiSelect.image(named: "remove")!
         //The height of selectorview, all subviews will be resized
@@ -162,7 +162,7 @@ public struct Config {
         public static var initials_font         :   UIFont  = UIFont.systemFont(ofSize: 18.0)
         //Background color of collectionviewcell
         public static var backgroundCellColor   :   UIColor = .clear
-        
+
     }
 
 }
@@ -182,7 +182,7 @@ public struct ThemeColors{
 
 // Struct that represent single items of the tableView, and CollectionView
 public struct SwiftMultiSelectItem{
-    
+
     public var title        :   String
     public var description  :   String?
     public var image        :   UIImage?
@@ -190,7 +190,7 @@ public struct SwiftMultiSelectItem{
     public var userInfo     :   Any?
     public var color        :   UIColor?
     public var row          :   Int?
-    
+
     ///Unique identifier
     fileprivate(set) var id :   String?
 
@@ -238,10 +238,10 @@ public struct SwiftMultiSelectItem{
         if let col = color{
             self.color = col
         }
-        
-        
+
+
     }
-    
+
     /// Custom equal function to compare objects
     ///
     /// - Parameters:
@@ -251,7 +251,7 @@ public struct SwiftMultiSelectItem{
     public static func ==(lhs: SwiftMultiSelectItem, rhs: SwiftMultiSelectItem) -> Bool{
         return lhs.row == rhs.row
     }
-    
+
     /// Custom disequal function to compare objects
     ///
     /// - Parameters:
@@ -261,54 +261,52 @@ public struct SwiftMultiSelectItem{
     public static func != (lhs: SwiftMultiSelectItem, rhs: SwiftMultiSelectItem) -> Bool{
         return lhs.row != rhs.row
     }
-    
+
     /// Get initial letters
     ///
     /// - Returns: String 2 intials
     func getInitials() -> String {
-        
+
         let tit = (title as NSString)
         var initials = String()
         if title != "" && tit.length >= 2
         {
             initials.append(tit.substring(to: 2))
         }
-        
+
         return initials.uppercased()
     }
-    
+
 }
 
 
 /// A data source
 public protocol SwiftMultiSelectDataSource{
-    
+
     /// Ask delegate for current item in row
     func swiftMultiSelect(itemAtRow row:Int) -> SwiftMultiSelectItem
-    
+
     /// Asks for the number of items
     func numberOfItemsInSwiftMultiSelect() -> Int
-    
+
 }
 
 /// A delegate to handle
 public protocol SwiftMultiSelectDelegate{
-    
+
     /// Tell to delegate that user did end selection
     func swiftMultiSelect(didSelectItems items:[SwiftMultiSelectItem])
-    
+
     /// Tell to delegate that item has been selected
     func swiftMultiSelect(didSelectItem item:SwiftMultiSelectItem)
-    
+
     /// Tell to delegate that item has been unselected
     func swiftMultiSelect(didUnselectItem item:SwiftMultiSelectItem)
-    
+
     /// Tell to delegate user has closed without select
     func didCloseSwiftMultiSelect()
-    
-    /// Tell to delegate user has closed without select
-//    func userDidSearch(searchString:String)
 
+    /// Tell to delegate user has closed without select
     func userDidSearch(searchString:String, tableView: UITableView)
 
 
@@ -316,36 +314,33 @@ public protocol SwiftMultiSelectDelegate{
 
 // MARK: - UIImageView
 extension UIImageView{
-    
-    
+
+
     /// Set an image in UIImageView from remote URL
     ///
     /// - Parameter url: url of the image
     func setImageFromURL(stringImageUrl url: String){
-        
+
         //Placeholder image
         image = Config.placeholder_image
-        
+
         //Download async image
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             if let url = URL(string: url) {
                 do{
-                    
+
                     let data = try Data.init(contentsOf: url)
-                    
+
                     //Set image in the main thread
                     DispatchQueue.main.async {
                         self.image = UIImage(data: data)
                     }
-                    
+
                 }catch{
-                    
+
                 }
             }
         }
-        
+
     }
 }
-
-
-
