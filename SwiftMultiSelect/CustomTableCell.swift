@@ -11,7 +11,8 @@ import Foundation
 /// Class to represent custom cell for tableview
 class CustomTableCell: UITableViewCell
 {
-    
+    var item:SwiftMultiSelectItem?
+
     /// Lazy var for label title
     open fileprivate(set) lazy var labelTitle: UILabel = {
         

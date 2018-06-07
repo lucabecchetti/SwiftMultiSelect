@@ -154,9 +154,11 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
             SwiftMultiSelect.delegate?.swiftMultiSelect(didUnselectItem: item!)
             
             //Reload cell state
-            reloadCellState(row: idp, selected: false)
-            
-            
+            if let item = item {
+                reloadCellState(row: idp, item: item, selected: false)
+            }
+
+
             if selectedItems.count <= 0{
                 //Toggle scrollview
                 toggleSelectionScrollView(show: false)
@@ -175,10 +177,12 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
         
             //Scroll to selected item
             self.selectionScrollView.scrollToItem(at: lastItemIndex, at: .right, animated: true)
-            
-            reloadCellState(row: idp, selected: true)
-            
-        
+
+            if let item = item {
+                reloadCellState(row: idp, item: item, selected: true)
+            }
+
+
         }
         
         

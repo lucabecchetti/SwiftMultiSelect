@@ -10,21 +10,21 @@ import Foundation
 
 /// Class that represent the selection view
 class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegate,UISearchBarDelegate {
-    
+
     /// Screen total with
     public var totalWidth:CGFloat{
         get{
             return UIScreen.main.bounds.width
         }
     }
-    
+
     /// Screen total height
     public var totalHeight:CGFloat{
         get{
             return UIScreen.main.bounds.height
         }
     }
-    
+
     /// Array of selected items
     open var selectedItems : [SwiftMultiSelectItem] = [SwiftMultiSelectItem](){
         didSet{
@@ -33,57 +33,57 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
             self.navigationItem.rightBarButtonItem?.isEnabled = (self.selectedItems.count > 0)
         }
     }
-    
+
     /// Lazy view that represent a selection scrollview
     open fileprivate(set) lazy var selectionScrollView: UICollectionView = {
-        
+
         //Build layout
         let layout                      = UICollectionViewFlowLayout()
         layout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection          = UICollectionViewScrollDirection.horizontal
         layout.minimumInteritemSpacing  = 0
         layout.minimumLineSpacing       = 0
-        
+
         //Build collectin view
         let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         selected.backgroundColor        = Config.selectorStyle.backgroundColor
         selected.isHidden               = (SwiftMultiSelect.initialSelected.count <= 0)
         return selected
-        
+
     }()
-    
+
     /// Lazy view that represent a selection scrollview
     open fileprivate(set) lazy var separator: UIView = {
-        
+
         //Build layout
         let sep                 = UIView()
         sep.autoresizingMask    = [.flexibleWidth]
         sep.backgroundColor     = Config.selectorStyle.separatorColor
         return sep
-        
+
     }()
-    
+
     /// Lazy var for table view
     open fileprivate(set) lazy var tableView: UITableView = {
-        
+
         let tableView:UITableView = UITableView()
         tableView.backgroundColor = Config.tableStyle.backgroundColor
         return tableView
-        
+
     }()
-    
+
     /// Lazy var for table view
     open fileprivate(set) lazy var searchBar: UISearchBar = {
-        
+
         let searchBar:UISearchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
-        
+
     }()
-    
+
     /// Lazy var for global stackview container
     open fileprivate(set) lazy var stackView: UIStackView = {
-        
+
         let stackView           = UIStackView(arrangedSubviews: [self.searchBar,self.selectionScrollView,self.tableView])
         stackView.axis          = .vertical
         stackView.distribution  = .fill
@@ -91,9 +91,9 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         stackView.spacing       = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
-        
+
     }()
-    
+
     /// Calculate the nav bar height if present
     var navBarHeight:CGFloat{
         get{
@@ -104,48 +104,48 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
             }
         }
     }
-    
+
     //Nav bar buttons
     var leftButtonBar   : UIBarButtonItem?
     var rightButtonBar  : UIBarButtonItem = UIBarButtonItem()
-    
+
     //Searched string
     var searchString  = ""
-    
+
     /// Function to build a views and set constraint
     func createViewsAndSetConstraints(){
 
         //Add stack view to current view
         view.addSubview(stackView)
-        
+
         selectionScrollView.addSubview(separator)
         separator.frame = CGRect(x: 0.0, y: Config.selectorStyle.selectionHeight-Config.selectorStyle.separatorHeight, width: Double(self.view.frame.size.width), height: Config.selectorStyle.separatorHeight)
         separator.layer.zPosition = CGFloat(separator.subviews.count+1)
-        
+
         //Register tableview delegate
         tableView.delegate      =  self
         tableView.dataSource    =  self
         //Register cell class
         tableView.register(CustomTableCell.classForCoder(), forCellReuseIdentifier: "cell")
-        
+
         //Register collectionvie delegate
         selectionScrollView.delegate    =   self
         selectionScrollView.dataSource  =   self
         //Register cell class
         selectionScrollView.register(CustomCollectionCell.classForCoder(), forCellWithReuseIdentifier: "cell")
-        
+
         //register search delegate
         searchBar.delegate = self
-        
+
         //Prevent adding top margin to collectionviewcell
         self.automaticallyAdjustsScrollViewInsets = false
-        
+
         //autolayout the stack view and elements
         let viewsDictionary = [
             "stackView" :   stackView,
             "selected"  :   self.selectionScrollView
             ] as [String : Any]
-        
+
         //constraint for stackview
         let stackView_H = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[stackView]-0-|",
@@ -160,7 +160,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
             metrics: nil,
             views: viewsDictionary
         )
-        
+
         searchBar.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 0).isActive        = true
         searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive                 = true
         searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive               = true
@@ -172,63 +172,70 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //Add all constraints to view
         view.addConstraints(stackView_H)
         view.addConstraints(stackView_V)
+
+        //Add a specific constraint to maitain top search bar fixed to parent view top anchor
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
     }
-    
-    
+
+
     /// Toggle de selection view
     ///
     /// - Parameter show: true show scroller, false hide the scroller
     func toggleSelectionScrollView(show:Bool) {
-        
+
         UIView.animate(withDuration: 0.2, animations: {
             self.selectionScrollView.isHidden = !show
         })
     }
-    
-    
+
+
     /// Selector for right button
     @objc public func selectionDidEnd(){
-        
+
         SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItems: self.selectedItems)
         self.dismiss(animated: true, completion: nil)
-        
+
     }
-    
+
     /// Selector for left button
     @objc public func dismissSelector(){
-        
+
         self.dismiss(animated: true, completion: nil)
         SwiftMultiSelect.delegate?.didCloseSwiftMultiSelect()
-        
+
     }
-    
+
     //MARK: Life Cycle
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
-        
+
+        // Prevent from navbar to overlap main stack view
+        self.edgesForExtendedLayout = []
+        self.automaticallyAdjustsScrollViewInsets = false
+
         self.title = Config.viewTitle
-        
+
         rightButtonBar.isEnabled                = false
         leftButtonBar                           = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(MultiSelecetionViewController.dismissSelector))
         leftButtonBar!.isEnabled                = true
         self.navigationItem.leftBarButtonItem   = leftButtonBar
         self.navigationItem.rightBarButtonItem  = rightButtonBar
-        
+
         rightButtonBar.action = #selector(MultiSelecetionViewController.selectionDidEnd)
         rightButtonBar.target = self
-        
+
         self.view.backgroundColor = Config.mainBackground
-        
+
         createViewsAndSetConstraints()
-        
+
         self.tableView.reloadData()
-        
+
         if(SwiftMultiSelect.initialSelected.count>0){
             self.selectionScrollView.reloadData()
             rightButtonBar.isEnabled    = true
             rightButtonBar.title        = "\(Config.doneString) (\(SwiftMultiSelect.initialSelected.count))"
         }
-        
+
     }
 }
