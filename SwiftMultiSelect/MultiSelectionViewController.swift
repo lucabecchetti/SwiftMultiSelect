@@ -43,6 +43,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         layout.scrollDirection          = UICollectionView.ScrollDirection.horizontal
         layout.minimumInteritemSpacing  = 0
         layout.minimumLineSpacing       = 0
+        layout.itemSize                 = CGSize(width: CGFloat(Config.selectorStyle.selectionHeight),height: CGFloat(Config.selectorStyle.selectionHeight));
         
         //Build collectin view
         let selected                    = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -155,7 +156,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         )
         //constraint for stackview
         let stackView_V = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-\(navBarHeight)-[stackView]-0-|",
+            withVisualFormat: "V:|-[stackView]-0-|",
             options: NSLayoutConstraint.FormatOptions(rawValue:0),
             metrics: nil,
             views: viewsDictionary
