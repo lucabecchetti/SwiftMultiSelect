@@ -40,7 +40,7 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //Build layout
         let layout                      = UICollectionViewFlowLayout()
         layout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.scrollDirection          = UICollectionViewScrollDirection.horizontal
+        layout.scrollDirection          = UICollectionView.ScrollDirection.horizontal
         layout.minimumInteritemSpacing  = 0
         layout.minimumLineSpacing       = 0
         
@@ -149,14 +149,14 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
         //constraint for stackview
         let stackView_H = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[stackView]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: viewsDictionary
         )
         //constraint for stackview
         let stackView_V = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-\(navBarHeight)-[stackView]-0-|",
-            options: NSLayoutFormatOptions(rawValue:0),
+            options: NSLayoutConstraint.FormatOptions(rawValue:0),
             metrics: nil,
             views: viewsDictionary
         )

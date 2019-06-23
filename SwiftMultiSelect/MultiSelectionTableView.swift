@@ -109,13 +109,13 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         
         
         //Set initial state
-        if let itm_pre = self.selectedItems.index(where: { (itm) -> Bool in
+        if let itm_pre = self.selectedItems.firstIndex(where: { (itm) -> Bool in
             itm == item
         }){
             self.selectedItems[itm_pre].color = cell.initials.backgroundColor!
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         }else{
-            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.accessoryType = UITableViewCell.AccessoryType.none
         }
         
         
@@ -169,11 +169,11 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         item.color = cell.initials.backgroundColor!
 
         //Check if cell is already selected or not
-        if cell.accessoryType == UITableViewCellAccessoryType.checkmark
+        if cell.accessoryType == UITableViewCell.AccessoryType.checkmark
         {
             
             //Set accessory type
-            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.accessoryType = UITableViewCell.AccessoryType.none
 
             //Comunicate deselection to delegate
             SwiftMultiSelect.delegate?.swiftMultiSelect(didUnselectItem: item)
@@ -185,7 +185,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         else{
             
             //Set accessory type
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
             
             //Add current item to selected
             selectedItems.append(item)
