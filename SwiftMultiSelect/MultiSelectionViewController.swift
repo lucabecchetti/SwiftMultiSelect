@@ -161,7 +161,13 @@ class MultiSelecetionViewController: UIViewController,UIGestureRecognizerDelegat
             views: viewsDictionary
         )
         
-        searchBar.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 0).isActive        = true
+        // Test if has notch
+        if (UIApplication.isDeviceWithSafeArea) {
+            searchBar.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 25).isActive        = true
+        } else {
+            searchBar.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 0).isActive         = true
+        }
+        
         searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive                 = true
         searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive               = true
         searchBar.heightAnchor.constraint(equalToConstant: CGFloat(40)).isActive = true

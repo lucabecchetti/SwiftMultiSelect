@@ -340,5 +340,16 @@ extension UIImageView{
     }
 }
 
-
+extension UIApplication {
+    
+    static var isDeviceWithSafeArea:Bool {
+        if #available(iOS 11.0, *) {
+            if let topPadding = shared.keyWindow?.safeAreaInsets.bottom,
+                topPadding > 0 {
+                return true
+            }
+        }
+        return false
+    }
+}
 
