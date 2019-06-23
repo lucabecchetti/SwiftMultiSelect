@@ -30,7 +30,7 @@ Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q
 ## Requirements
 
   - iOS 9+
-  - swift 3.0
+  - swift 5.0
   - Access for Contacts
   
 ## Main features
