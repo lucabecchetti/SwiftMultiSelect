@@ -93,13 +93,15 @@ public class SwiftMultiSelect{
 
 /// Public struct for configuration and customizations
 public struct Config {
-
+    
+    /// Number max of items that can be selected. Initial value -1 = set to false, others = true
+    public static var maxSelectItems        :   Int = -1
     /// Background of main view
     public static var mainBackground        :   UIColor    = UIColor.white
     /// View's title
     public static var viewTitle             :   String     = "Swift Multiple Select"
     /// Title for done button
-    public static var doneString            :   String     = "Done"
+    public static var doneString            :   String     = "Valider"
     //Placeholder image during lazy load
     public static var placeholder_image     :   UIImage     = SwiftMultiSelect.image(named: "user_blank")!
     /// Array of colors to use in initials
@@ -298,13 +300,14 @@ public protocol SwiftMultiSelectDelegate{
     /// Tell to delegate that item has been unselected
     func swiftMultiSelect(didUnselectItem item:SwiftMultiSelectItem)
     
+    /// Tell to delegate that the number of item selected has been reached
+    func numberMaximumOfItemsReached(items: [SwiftMultiSelectItem])
+    
     /// Tell to delegate user has closed without select
     func didCloseSwiftMultiSelect()
     
     /// Tell to delegate user has closed without select
     func userDidSearch(searchString:String)
-    
-    
 }
 
 // MARK: - UIImageView

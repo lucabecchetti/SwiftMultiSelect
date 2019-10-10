@@ -160,7 +160,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
 
         if SwiftMultiSelect.dataSourceType == .phone{
             item = (searchString == "") ?  SwiftMultiSelect.items![indexPath.row] : SwiftMultiSelect.items!.filter({$0.title.lowercased().contains(searchString.lowercased()) || ($0.description != nil && $0.description!.lowercased().contains(searchString.lowercased())) })[indexPath.row]
-        }else{
+        } else {
             //Try to get item from delegate
             item = SwiftMultiSelect.dataSource?.swiftMultiSelect(itemAtRow: indexPath.row)
         }
@@ -169,8 +169,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
         item.color = cell.initials.backgroundColor!
 
         //Check if cell is already selected or not
-        if cell.accessoryType == UITableViewCell.AccessoryType.checkmark
-        {
+        if cell.accessoryType == UITableViewCell.AccessoryType.checkmark {
             
             //Set accessory type
             cell.accessoryType = UITableViewCell.AccessoryType.none
@@ -181,20 +180,30 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
             //Reload collectionview
             self.reloadAndPositionScroll(idp: item.row!, remove:true)
             
-        }
-        else{
+        } else {
             
-            //Set accessory type
-            cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+            if Config.maxSelectItems != -1 && selectedItems.count >= Config.maxSelectItems - 1 {
+                
+                //Max number reached
+                SwiftMultiSelect.delegate?.numberMaximumOfItemsReached(items: selectedItems)
+                
+            }
             
-            //Add current item to selected
-            selectedItems.append(item)
-            
-            //Comunicate selection to delegate
-            SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItem: item)
-
-            //Reload collectionview
-            self.reloadAndPositionScroll(idp: item.row!, remove:false)
+            if Config.maxSelectItems == -1 || selectedItems.count < Config.maxSelectItems { //Default value = -1
+                
+                //Set accessory type
+                cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                
+                //Add current item to selected
+                selectedItems.append(item)
+                
+                //Comunicate selection to delegate
+                SwiftMultiSelect.delegate?.swiftMultiSelect(didSelectItem: item)
+                
+                //Reload collectionview
+                self.reloadAndPositionScroll(idp: item.row!, remove:false)
+                
+            }
             
         }
 
@@ -219,7 +228,7 @@ extension MultiSelecetionViewController:UITableViewDelegate,UITableViewDataSourc
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchString = searchText
 
-        if (searchText.isEmpty) {
+        if searchText.isEmpty {
             self.perform(#selector(self.hideKeyboardWithSearchBar(_:)), with: searchBar, afterDelay: 0)
             self.searchString = ""
         }
