@@ -3,7 +3,7 @@
   <img src="https://user-images.githubusercontent.com/16253548/28709765-d82d454a-7381-11e7-8cd6-8d34f5c4cfd3.png" width=400px alt="SwiftMultiSelect" title="SwiftMultiSelect">
 </p>
 
-[![Version](https://img.shields.io/badge/pod-0.2.4-blue.svg)](https://cocoapods.org/pods/InAppNotify) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/InAppNotify) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/InAppNotify) [![Swift3](https://img.shields.io/badge/swift3-compatible-brightgreen.svg)](https://cocoapods.org/pods/InAppNotify)
+[![Version](https://img.shields.io/badge/pod-0.2.4-blue.svg)](https://cocoapods.org/pods/SwiftMultiSelect) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://cocoapods.org/pods/SwiftMultiSelect) [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](https://cocoapods.org/pods/SwiftMultiSelect) [![Swift5](https://img.shields.io/badge/swift5-compatible-brightgreen.svg)](https://cocoapods.org/pods/SwiftMultiSelect)
 
 During develop of my apps, i usually needed to select more than one element from a tableview, but i don't like the native ios integration, i think is not graphically clear, so, i created this library. Choose SwiftMultiSelect for your next project, I'll be happy to give you a little help!
 
@@ -30,7 +30,7 @@ Try our demo on [appetize.io](https://appetize.io/embed/4zz7rwje6npp03d8u8d8a75q
 ## Requirements
 
   - iOS 9+
-  - swift 3.0
+  - swift 5.0
   - Access for Contacts
   
 ## Main features

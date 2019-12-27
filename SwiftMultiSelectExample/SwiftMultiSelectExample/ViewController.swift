@@ -28,6 +28,7 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
         createItems()
        
         Config.doneString = "Ok"
+        Config.maxSelectItems = 3
         SwiftMultiSelect.dataSource     = self
         SwiftMultiSelect.delegate       = self
     }
@@ -96,6 +97,10 @@ class ViewController: UIViewController,SwiftMultiSelectDelegate,SwiftMultiSelect
 
     func swiftMultiSelect(didSelectItem item: SwiftMultiSelectItem) {
         print("item: \(item.title) has been selected!")
+    }
+    
+    func numberMaximumOfItemsReached(items: [SwiftMultiSelectItem]) {
+        print("Maximum of \(Config.maxSelectItems.self) reached with items: \n\t\(items)")
     }
 
     func didCloseSwiftMultiSelect() {

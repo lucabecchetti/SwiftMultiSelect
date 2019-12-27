@@ -137,7 +137,7 @@ extension MultiSelecetionViewController:UICollectionViewDelegate,UICollectionVie
         if remove {
 
             //For remove from collection view and create IndexPath, i need the index posistion in the array
-            let id = selectedItems.index { (itm) -> Bool in
+            let id = selectedItems.firstIndex { (itm) -> Bool in
                 itm.row == idp
             }
             
